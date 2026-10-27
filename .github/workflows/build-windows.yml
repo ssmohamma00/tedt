@@ -1,0 +1,83 @@
+name: Build Windows installer
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade pyinstaller pywebview pythonnet
+
+      - name: Build GameForSale.exe with PyInstaller
+        run: >
+          python -m PyInstaller --noconfirm --onefile --console
+          --name GameForSale --icon app_icon.ico --paths vendor
+          --add-data "static;static" --add-data "vendor;vendor" --add-data "catalog.json;."
+          --hidden-import xml.etree.ElementTree --hidden-import xml.etree.cElementTree
+          --hidden-import xml.parsers.expat --hidden-import qrcode --hidden-import qrcode.image.svg
+          --hidden-import webview.platforms.edgechromium --hidden-import webview.platforms.winforms
+          --hidden-import webview.platforms.mshtml --collect-all clr_loader --collect-all pythonnet
+          launcher.py
+
+      - name: Smoke-test the built exe (catches "not found" / packaging bugs)
+        shell: pwsh
+        run: |
+          $proc = Start-Process -FilePath "dist\GameForSale.exe" -PassThru -RedirectStandardOutput "exe_stdout.log" -RedirectStandardError "exe_stderr.log"
+          $ok = $false
+          for ($i = 0; $i -lt 40; $i++) {
+            Start-Sleep -Seconds 1
+            try {
+              $resp = Invoke-WebRequest -Uri "http://127.0.0.1:8080/" -UseBasicParsing -TimeoutSec 2
+              if ($resp.Content -like "*<html*" -or $resp.Content -like "*<!doctype*") {
+                Write-Host "OK: server returned real HTML on attempt $i"
+                $ok = $true
+                break
+              } else {
+                Write-Host "Got a response but it doesn't look like the app page (attempt $i):"
+                Write-Host $resp.Content.Substring(0, [Math]::Min(500, $resp.Content.Length))
+              }
+            } catch {
+              Write-Host "Not ready yet (attempt $i): $($_.Exception.Message)"
+            }
+          }
+          Write-Host "---- exe stdout/stderr (debug prints from launcher.py) ----"
+          if (Test-Path "exe_stdout.log") { Get-Content "exe_stdout.log" }
+          if (Test-Path "exe_stderr.log") { Get-Content "exe_stderr.log" }
+          Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+          if (-not $ok) {
+            Write-Error "GameForSale.exe did not serve the real app page -- see logs above."
+            exit 1
+          }
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+
+      - name: Compile installer with Inno Setup
+        run: '& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss'
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GameForSale-Setup
+          path: dist_installer\GameForSale-Setup.exe
+          if-no-files-found: error
+
+      - name: Upload raw exe artifact (for debugging if the installer step fails)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: GameForSale-exe-only
+          path: dist\GameForSale.exe
+          if-no-files-found: ignore

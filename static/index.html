@@ -1,0 +1,400 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Game For Sale</title><style>@font-face{font-family:Peyda;font-weight:700;src:url(/static/fonts/peyda.ttf) format("truetype");font-display:swap}
+:root{--bg:#050914;--panel:#0b1222;--text:#edf7ff;--muted:#91a9c4;--line:#735900;--accent:#ffd400}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#10284b,#050914 65%);font-family:Peyda,Tahoma,Arial,sans-serif;color:var(--text)}button,input,select{font:inherit}button{cursor:pointer;border:1px solid #9a7900;border-radius:10px;padding:10px 14px;background:#211a04;color:#fff0a3}.primary{background:linear-gradient(110deg,#b88700,#ffe000);color:#171000;font-weight:bold}.wrap{max-width:1400px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}.top h1{color:#ffe66d;font-size:25px}.layout{display:grid;grid-template-columns:240px 1fr;gap:18px}.panel{background:linear-gradient(155deg,#171406,#080805);border:1px solid #5d4a00;border-radius:16px;padding:16px}.cats button{display:block;width:100%;text-align:right;margin:7px 0}.cats button.active{background:#6c5000;border-color:#ffdf00}.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}.bar input,.field input,.field select{background:#080803;color:#fff8cf;border:1px solid #705600;border-radius:9px;padding:10px;max-width:100%}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:13px}.game{overflow:hidden;border:1px solid #735900;border-radius:12px;background:#070704}.cover{aspect-ratio:2/3;height:auto!important;background:#111;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.cover img{position:relative;width:100%;height:100%;object-fit:contain;z-index:1}.cover img.cbg{position:absolute;inset:0;object-fit:cover;filter:blur(18px) brightness(.55);transform:scale(1.2);z-index:0}.cover .version{z-index:2}.version{position:absolute;bottom:7px;right:7px;font-size:9px;background:#100d02dc;border:1px solid #8c6c00;color:#ffe66d;padding:3px 6px;border-radius:5px}.gameinfo{padding:10px}.gameinfo h3{font-size:14px;min-height:36px}.muted{color:var(--muted);font-size:12px}.fields{display:flex;gap:8px;flex-wrap:wrap}.fields input{min-width:130px;flex:1}.hide{display:none!important}table{width:100%;border-collapse:collapse;margin-top:12px}td,th{border-bottom:1px solid #554600;padding:9px;text-align:right}#gate{max-width:440px;margin:8vh auto}.field{margin:12px 0}.field input,.field select{width:100%}.notice{padding:10px;color:#ff9d9d}.total{font-size:21px;color:#ffe66d;font-weight:bold;margin:12px 0}.adminbox{margin-top:18px}.small{font-size:12px;color:#cdbb61}
+/* Gaming invoice design */
+.invoice-sheet{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#1b2c50 0%,#0b1020 55%,#070b14 100%);border:1px solid #4c5c82!important;border-radius:20px;box-shadow:0 18px 60px #0009;color:#f3f7ff}.invoice-hero{display:flex;align-items:center;gap:14px;padding:18px;border-radius:15px;background:linear-gradient(125deg,#171c34,#111b2f 55%,#302500);border:1px solid #5e5526}.invoice-logo{width:62px;height:62px;flex:0 0 62px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(145deg,#ffe66d,#d89c00);box-shadow:0 0 25px #f5c40035}.invoice-logo svg{width:43px;height:43px}.invoice-logo img{width:100%;height:100%;object-fit:contain;border-radius:8px}.brand-logo{width:58px;height:58px;object-fit:contain;border-radius:14px;filter:drop-shadow(0 0 12px #00c8ff55);background:#050a18}.top-brand{display:flex;align-items:center;gap:14px}.top-brand h1{margin:0}.invoice-logo{width:82px;height:82px;flex:0 0 82px;padding:4px;background:#fff;border:1px solid #d6ad28;overflow:hidden}.invoice-logo img{width:100%;height:100%;object-fit:contain}.invoice-brand{font-size:12px;color:#d5dff5;letter-spacing:1px}.invoice-hero h2{margin:5px 0;color:#ffe16b;font-size:23px}.invoice-tag{display:inline-block;border:1px solid #d6ad28;border-radius:20px;padding:5px 10px;color:#ffe16b;font-size:11px;margin-top:4px}.invoice-meta{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}.invoice-meta div{background:#10192a;border:1px solid #293957;border-radius:11px;padding:10px 12px;min-width:0}.invoice-meta small{display:block;color:#9eb0d0;font-size:11px;margin-bottom:5px}.invoice-meta b{font-size:13px;overflow-wrap:anywhere}.invoice-table-wrap{border:1px solid #34435f;border-radius:12px;overflow:hidden}.invoice-sheet table{margin:0}.invoice-sheet th{background:#17243a;color:#ffe16b;font-size:12px}.invoice-sheet td{color:#edf3ff;border-bottom:1px solid #29364c;font-size:12px}.invoice-totalbox{margin-top:16px;padding:15px 17px;border:1px solid #c59d25;border-radius:13px;background:linear-gradient(120deg,#211b0a,#121a2b);display:flex;justify-content:space-between;align-items:center;gap:12px}.invoice-totalbox span{font-size:13px;color:#dce5f6}.invoice-totalbox strong{font-size:22px;color:#ffe16b}.invoice-footer{text-align:center;color:#aebbd2;font-size:12px;margin:18px 0 4px}.invoice-footer .thanks{color:#ffe16b;font-weight:bold;font-size:14px;margin-bottom:7px}.invoice-actions{display:flex;justify-content:center;margin-top:16px}
+.invoice-qr{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px auto 4px;padding:12px;border:1px dashed #7b671e;border-radius:12px;max-width:360px;background:#0d1422}.invoice-qr img{width:104px;height:104px;background:#fff;padding:5px;border-radius:6px}.invoice-qr .qr-copy{font-size:11px;line-height:1.9;color:#dce5f6}.invoice-qr .qr-copy strong{display:block;color:#ffe16b;font-size:13px}@media print{.invoice-qr{background:#fff!important;border:1px dashed #777!important;color:#111!important}.invoice-qr .qr-copy,.invoice-qr .qr-copy strong{color:#111!important}.invoice-qr img{width:82px;height:82px}}
+@media(max-width:750px){.layout{grid-template-columns:1fr}.wrap{padding:12px}.cover{height:auto!important}}@page{size:A5 portrait;margin:8mm}@media print{html,body{width:148mm!important;min-height:210mm!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important}body *{visibility:hidden!important}#invoice,#invoice *{visibility:visible!important}#invoice{display:block!important;position:absolute!important;left:0!important;top:0!important;width:100%!important;color:#111!important}.invoice-sheet{max-width:none!important;width:100%!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important;border:0!important;border-radius:0!important;box-shadow:none!important}.invoice-hero{background:#fff!important;border:2px solid #111!important;border-radius:8px!important;padding:10px!important}.invoice-logo{background:#fff!important;box-shadow:none!important;border:1px solid #111!important}.invoice-logo svg{stroke:#111!important}.invoice-logo img{filter:grayscale(1) contrast(1.2);background:#fff}.invoice-brand,.invoice-hero h2,.invoice-tag{color:#111!important}.invoice-tag{border-color:#111!important}.invoice-meta div{background:#fff!important;border:1px solid #999!important;border-radius:5px!important;padding:7px!important}.invoice-meta small{color:#555!important}.invoice-table-wrap{border:1px solid #777!important;border-radius:5px!important}.invoice-sheet th{background:#eee!important;color:#111!important}.invoice-sheet td{color:#111!important;border-bottom:1px solid #bbb!important}.invoice-totalbox{background:#fff!important;border:2px solid #111!important;border-radius:6px!important;padding:10px!important}.invoice-totalbox span,.invoice-totalbox strong,.invoice-footer,.invoice-footer .thanks{color:#111!important}.no-print{display:none!important}.invoice-sheet table{font-size:9pt}.invoice-sheet td,.invoice-sheet th{padding:5px!important}.invoice-totalbox strong{font-size:17pt!important}.invoice-footer{margin:10px 0 0!important}}.brand-stack{display:flex;flex-direction:column;align-items:center;gap:6px}.brand-logo-lg{width:150px;height:150px;object-fit:contain;border-radius:22px;box-shadow:0 0 30px #3a7bff55}.brand-fa{font-size:22px;font-weight:bold;color:#7fd8ff;text-shadow:0 0 12px #9a5cff88}.gate-brand{margin:0 auto 14px}.gate-brand .brand-logo-lg{width:min(300px,70vw);height:min(300px,70vw)}.gate-brand .brand-fa{font-size:30px}@media print{.top .brand-stack{display:none!important}}.invoice-logo{width:110px!important;height:110px!important;flex:0 0 110px!important}@media print{.invoice-logo{width:30mm!important;height:30mm!important;flex:0 0 30mm!important;border:0!important}.invoice-logo img{filter:none!important}}.invoice-meta{gap:5px!important;margin:10px 0!important}.invoice-meta div{display:flex!important;align-items:center;justify-content:space-between;gap:8px;padding:5px 9px!important;border-radius:7px!important}.invoice-meta small{margin:0!important;font-size:10px!important;white-space:nowrap}.invoice-meta b{font-size:12px!important;text-align:left}@media print{.invoice-meta{gap:3px!important;margin:6px 0!important}.invoice-meta div{padding:3px 6px!important;border-radius:4px!important}.invoice-meta small{font-size:8pt!important}.invoice-meta b{font-size:9pt!important}}body{position:relative;min-height:100vh}body::before{content:"";position:fixed;inset:-40px;z-index:-1;background:linear-gradient(#05091488,#05091488),url(/static/assets/sahelstore-app.png) center/cover no-repeat;filter:blur(16px);transform:scale(1.1);pointer-events:none}@media print{#gate,#app>*:not(#invoice){display:none!important}html,body{min-height:0!important;height:auto!important}body{position:static!important}body::before{display:none!important}}#gate{background:rgba(255,255,255,.08)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 8px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.35)}#gate input{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important}#gate .muted{color:#d6e4ff!important}#gate label{text-shadow:0 1px 4px #000}#gate .gate-brand .brand-logo-lg{box-shadow:0 0 40px #5a8cff88}body:has(#gate:not(.hide))::before{background:linear-gradient(#05091422,#05091433),url(/static/assets/sahelstore-app.png) center/cover no-repeat;filter:blur(2px);transform:none;inset:0}h1,h2,h3,h4,button,input,select,table,.brand-fa{font-family:Peyda,Tahoma,Arial,sans-serif}body,.panel,#gate,#gate *,h1,h2,h3,h4,p,label,td,th,small,b,.muted,.total,.bar,.fields,.cats button,.game,.gameinfo,.gameinfo *,.invoice-sheet,.invoice-sheet *{text-align:center!important}
+.top{justify-content:center!important;flex-direction:column}.top-brand{flex-direction:column;justify-content:center;text-align:center}.top .bar{justify-content:center}.fields,.bar{justify-content:center!important}
+.invoice-hero{flex-direction:column!important;justify-content:center;text-align:center}.invoice-meta div{justify-content:center!important;text-align:center!important}.invoice-meta b{text-align:center!important}
+.invoice-totalbox{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}.invoice-actions{text-align:center!important;justify-content:center}
+.gameinfo{display:flex;flex-direction:column;align-items:center}.field{text-align:center}input,select{text-align:center}input::placeholder{text-align:center}
+.cats button{text-align:center!important}.adminbox input,#catPrice{text-align:center}
+@media print{.invoice-hero{flex-direction:column!important}}@media(max-width:750px){body::before{background:linear-gradient(#05091466,#050914aa),url(/static/assets/bg-mobile.jpg) center top/cover no-repeat!important;filter:blur(5px)!important;transform:scale(1.05)!important;inset:0!important}body:has(#gate:not(.hide))::before{background:linear-gradient(#05091400,#05091466),url(/static/assets/bg-mobile.jpg) center top/cover no-repeat!important;filter:none!important;transform:none!important}#gate{margin:4vh auto!important;width:92%}.gate-brand .brand-logo-lg{width:min(220px,55vw);height:min(220px,55vw)}.brand-logo-lg{width:110px;height:110px}.top{margin-bottom:12px}.panel{background:linear-gradient(155deg,rgba(23,20,6,.82),rgba(8,8,5,.86))!important}.grid{grid-template-columns:repeat(2,1fr)!important}.fields input,.bar input{width:100%}.fields button,.bar button{flex:1 1 auto}}@media(min-width:751px){body::before{background:linear-gradient(#05091466,#050914aa),url(/static/assets/bg-desktop.jpg) center/cover no-repeat!important;filter:blur(6px)!important;transform:scale(1.05)!important;inset:0!important}body:has(#gate:not(.hide))::before{background:linear-gradient(#05091400,#05091444),url(/static/assets/bg-desktop.jpg) center/cover no-repeat!important;filter:none!important;transform:none!important}}.invoice-meta div:first-child b{background:linear-gradient(90deg,#22d3ee,#d946ef);-webkit-background-clip:text;background-clip:text;color:transparent!important;font-size:15px!important;direction:ltr;unicode-bidi:isolate}@media print{.invoice-meta div:first-child b{background:none!important;color:#111!important;-webkit-text-fill-color:#111}}.logo-print{display:none}.invoice-logo{background:transparent!important;border:0!important;padding:0!important;box-shadow:0 0 28px #5a8cff66!important}.invoice-logo img{border-radius:18px!important}@media print{.logo-screen{display:none!important}.logo-print{display:block!important}.invoice-logo{box-shadow:none!important;border:1px solid #111!important;padding:2px!important}}.danger{border-color:#a33!important;color:#ffb3b3!important;background:#2a0b0b!important}.qr-card{max-width:340px;margin:10px auto 22px;padding:18px;border-radius:20px;border:1px solid rgba(160,140,255,.5);background:linear-gradient(160deg,#0a1230,#1a0a3a);display:flex;flex-direction:column;align-items:center;gap:8px}.qr-logo{width:90px;height:90px;border-radius:16px}.qr-title{font-size:22px;color:#7fd8ff}.qr-sub{color:#c9b8ff;font-size:14px}.qr-box{background:#fff;padding:12px;border-radius:14px}.qr-box img{width:220px;height:220px;display:block}.qr-url{direction:ltr;font-size:13px;color:#ffe16b;word-break:break-all}.gate-qr{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}.gate-qr .qr-box{padding:8px}.gate-qr .qr-box img{width:150px;height:150px}@media(max-width:750px){.gate-qr{display:none}}@media(min-width:751px){#gate{margin:3vh auto!important}.gate-brand .brand-logo-lg{width:190px;height:190px}.gate-brand .brand-fa{font-size:26px}.gate-qr .qr-box img{width:130px;height:130px}}#settings .sset{display:flex;gap:16px;align-items:flex-start;margin-top:10px}#settings .snav{display:flex;flex-direction:column;gap:8px;min-width:170px;position:sticky;top:10px}#settings .snavbtn{padding:11px 14px;font-size:14px;text-align:right!important}#settings .snavbtn.active{background:#6c5000!important;border-color:#ffdf00!important;color:#fff!important}#settings .sbody{flex:1;min-width:0}#settings .spane.hide{display:none!important}#settings.orders-mode .snav{display:none}@media(max-width:750px){#settings .sset{flex-direction:column}#settings .snav{flex-direction:row;flex-wrap:wrap;position:static;min-width:0;width:100%}#settings .snavbtn{flex:1}}.top{position:relative}#settingsBtn{position:absolute;top:0;left:0;width:46px;height:46px;padding:0!important;font-size:24px;line-height:1;border-radius:50%}.top .brand-stack{}#logout{position:absolute;top:0;right:0;height:46px;padding:0 16px}.game{position:relative}.game .gameinfo{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;align-items:stretch;gap:5px;padding:34px 8px 8px;background:linear-gradient(transparent,#000000e6 55%)}.game .gameinfo h3{margin:0;font-size:13px;line-height:1.3;color:#fff;text-shadow:0 1px 4px #000}.game .gameinfo .muted{font-size:11px;color:#ffe66d;margin:0}.game .gameinfo button{padding:6px 8px!important;font-size:12px!important;margin:0!important;width:100%}.game .gameinfo .row2{display:flex;gap:5px}.game .gameinfo .row2 button{flex:1}.cover .version{top:7px!important;bottom:auto!important}</style><style>
+/* دکمه‌های ویرایش و حذف سفارش‌ها کوچک‌تر */
+#orders button[data-edit],#orders button[data-orderdel]{padding:3px 9px!important;font-size:11px!important;border-radius:7px!important;line-height:1.4}
+</style>
+<style>
+/* هدر فاکتور کوچک‌تر + کادر تیک نصب */
+.invoice-hero{padding:8px 12px!important;gap:10px!important}
+.invoice-logo{width:64px!important;height:64px!important;flex:0 0 64px!important}
+.invoice-hero h2{font-size:17px!important;margin:3px 0!important}
+.invoice-brand{font-size:10px!important}
+.invoice-tag{font-size:10px!important;padding:2px 8px!important;margin-top:2px!important}
+.chkcol{width:42px;text-align:center}
+.chk{display:inline-block;width:20px;height:20px;line-height:17px;border:2px solid #ffe16b;border-radius:5px;font-size:15px;font-weight:bold;color:#7CFC9A;vertical-align:middle;user-select:none}
+.chk.adm{cursor:pointer}
+.chk.on{background:#14301b}
+@media print{
+.invoice-hero{flex-direction:row!important;justify-content:center!important;gap:8px!important;padding:5px 10px!important;border-width:1.5px!important}
+.invoice-logo{width:17mm!important;height:17mm!important;flex:0 0 17mm!important}
+.invoice-hero h2{font-size:13pt!important;margin:2px 0!important}
+.invoice-brand{font-size:7pt!important}
+.invoice-tag{font-size:8pt!important;padding:1px 7px!important}
+.chk{border:1.5px solid #111!important;color:#111!important;background:#fff!important;width:4.5mm;height:4.5mm;line-height:3.8mm;font-size:10pt}
+}
+</style>
+<style>
+/* دکمه‌های کارت بازی کوچک‌تر (انتخاب / تغییر عکس / حذف) */
+.gameinfo button{padding:4px 9px!important;font-size:11px!important;border-radius:7px!important;line-height:1.4;margin:2px 1px}
+</style>
+<style>
+/* سربرگ‌ها و موارد اضافه */
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabbtn{padding:8px 14px!important;font-size:13px!important}
+.tabbtn.active{background:#6c5000!important;border-color:#ffdf00!important;color:#fff!important}
+.exrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid #554600}
+.exdel{padding:3px 9px!important;font-size:11px!important;border-radius:7px!important;border-color:#a33!important;color:#ffb3b3!important}
+.invoice-acc{margin-top:10px;padding:8px 12px;border:1px dashed #c59d25;border-radius:10px;font-size:12px;color:#ffe16b}
+@media print{.invoice-acc{border:1px dashed #111!important;color:#111!important;font-size:9pt;padding:4px 8px}}
+</style>
+<style>
+/* صفحه جدا برای تنظیمات */
+#app.settings-mode>#customerForm,#app.settings-mode>.layout,#app.settings-mode>#invoice{display:none!important}
+#app.settings-mode #settings{margin-top:6px}
+.settings-head{margin-bottom:12px}
+</style>
+<style>
+/* شماره فاکتور بالای صفحه */
+.invoice-no{text-align:center;font-size:15px;color:#dce5f6;margin:0 0 10px}
+.invoice-no b{font-size:26px;margin-right:6px;background:linear-gradient(90deg,#22d3ee,#d946ef);-webkit-background-clip:text;background-clip:text;color:transparent}
+.invoice-meta div:first-child b{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#f3f7ff!important;-webkit-text-fill-color:currentColor;font-size:12px!important;direction:rtl!important}
+@media print{.invoice-no{color:#111!important;font-size:12pt;margin:0 0 5px}.invoice-no b{background:none!important;color:#111!important;-webkit-text-fill-color:#111;font-size:17pt}.invoice-meta div:first-child b{color:#111!important;-webkit-text-fill-color:#111}}
+</style>
+<style>
+/* پنل‌های شیشه‌ای */
+.panel:not(.invoice-sheet){background:rgba(255,255,255,.08)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 8px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.35)}
+.panel:not(.invoice-sheet) .game{background:rgba(255,255,255,.07)!important;border-color:rgba(255,255,255,.22)!important}
+.panel:not(.invoice-sheet) input,.panel:not(.invoice-sheet) select{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important}
+.panel:not(.invoice-sheet) input::placeholder{color:#d6e4ff;opacity:.75}
+.panel:not(.invoice-sheet) button:not(.primary):not(.danger):not(.active){background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.panel:not(.invoice-sheet) .muted{color:#d6e4ff}
+.panel:not(.invoice-sheet) .exrow,.panel:not(.invoice-sheet) td,.panel:not(.invoice-sheet) th{border-bottom-color:rgba(255,255,255,.2)}
+.cats button.active{background:rgba(255,212,0,.28)!important;border-color:#ffdf00!important}
+@media print{.panel{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+</style>
+<style>
+.top .bar button:not(.primary){background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+/* لیست بازشوی select: متن سفید روی زمینه سفید دیده نمی‌شد */
+select{color-scheme:dark}select option,select optgroup{background-color:#0b1020!important;color:#f3f7ff!important}
+</style>
+<style>
+/* منوها: شیشه‌ای شفاف با دور نئونی آبی؛ هاور/انتخاب: زرد */
+.top #logout,.top #settingsBtn,.top .bar button,.snav .snavbtn,.tabs .tabbtn,.cats button{background:rgba(20,60,95,.45)!important;border:2px solid #2bc4ff!important;color:#38c8ff!important;font-weight:700;text-shadow:0 0 8px rgba(43,196,255,.8);box-shadow:0 0 6px #2bc4ff,0 0 16px rgba(43,196,255,.65),inset 0 0 10px rgba(43,196,255,.25),inset 0 1px 0 rgba(255,255,255,.25)!important;transition:background .15s,color .15s,border-color .15s,box-shadow .15s,transform .1s}
+.top #logout:hover,.top #settingsBtn:hover,.top .bar button:hover,.snav .snavbtn:hover,.tabs .tabbtn:hover,.cats button:hover,.top .bar button:focus-visible,.snav .snavbtn:focus-visible,.tabs .tabbtn:focus-visible,.cats button:focus-visible,.snav .snavbtn.active,.tabs .tabbtn.active,.cats button.active{background:rgba(255,212,0,.16)!important;border-color:#ffd400!important;color:#ffe96b!important;text-shadow:0 0 8px rgba(255,212,0,.7);box-shadow:0 0 6px #ffd400,0 0 16px rgba(255,212,0,.55),inset 0 0 10px rgba(255,212,0,.25),inset 0 1px 0 rgba(255,255,255,.35)!important}
+.top #logout:active,.top #settingsBtn:active,.top .bar button:active,.snav .snavbtn:active,.tabs .tabbtn:active,.cats button:active{transform:scale(.97)}
+@media print{.top #logout,.top #settingsBtn,.top .bar button,.snav .snavbtn,.tabs .tabbtn,.cats button{box-shadow:none!important;text-shadow:none!important;backdrop-filter:none!important}}
+/* چرخ‌دنده: فقط خود آیکون، بدون دایره/کادر */
+.top #settingsBtn,.top #settingsBtn:hover,.top #settingsBtn:active,.top #settingsBtn:focus-visible{background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important}
+.top #settingsBtn{filter:drop-shadow(0 0 5px #2bc4ff);transition:filter .15s,transform .15s}
+.top #settingsBtn:hover{filter:drop-shadow(0 0 7px #ffd400);transform:rotate(30deg)}
+/* کارت بازی‌ها: دور نئونی آبی کمرنگ */
+.panel:not(.invoice-sheet) .game,.game{border:2px solid #2bc4ff!important;box-shadow:0 0 6px #2bc4ff,0 0 16px rgba(43,196,255,.6),inset 0 0 10px rgba(43,196,255,.22)!important}
+@media print{.game{box-shadow:none!important}}
+/* عملکرد موبایل: حذف blur سنگین (کندی/پرش در گوشی) */
+@media(max-width:750px){.panel:not(.invoice-sheet){backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(10,16,34,.78)!important}.top .bar button:not(.primary){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body::before{filter:none!important;transform:none!important}.cbg{filter:none!important}}
+</style>
+<style>
+/* موبایل */
+@media(max-width:750px){
+html,body{overflow-x:hidden}
+.wrap{padding:10px calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left))}
+.top .brand-logo-lg{width:84px!important;height:84px!important}
+.top h1{font-size:18px!important;margin:4px 0!important}
+.top .bar{gap:6px}.top .bar button,.top #logout{padding:8px 12px!important;font-size:13px!important}
+#settingsBtn{width:40px!important;height:40px!important;font-size:22px!important}
+button,input,select{min-height:42px}
+.panel{padding:12px!important;border-radius:16px}
+.invoice-sheet{padding:10px!important}
+#netModal .row{grid-template-columns:1fr!important}
+}
+</style>
+<style>
+/* صفحه ورود - موبایل: کادر کاملاً شفاف */
+@media(max-width:750px){
+body:has(#gate:not(.hide))::before{
+background:linear-gradient(#05091422,#05091477),url(/static/assets/bg-mobile.jpg) center top/cover no-repeat!important;
+filter:blur(6px)!important;transform:scale(1.08)!important;inset:0!important}
+#gate{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+border:1px solid rgba(255,255,255,.35)!important;box-shadow:0 10px 40px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.3)!important}
+#gate h2,#gate label,#gate .muted{color:#fff!important}
+#gate input{background:transparent!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important}
+#gate,#gate *{text-shadow:0 1px 6px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9)}#gate input{text-shadow:none}
+}
+</style>
+<style>
+/* زرد + قرمز نئونی ملایم شیشه‌ای: داخل برنامه و صفحه ورود */
+@media screen{
+#app :not(.invoice-sheet):not(.invoice-sheet *),#gate,#gate *{color:#ffe600!important;-webkit-text-fill-color:#ffe600}
+#app .invoice-sheet,#app .invoice-sheet *{-webkit-text-fill-color:initial}
+#app input,#app select,#app textarea,#gate input{background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,230,0,.45)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+#app input::placeholder,#gate input::placeholder{color:#ffe600aa!important}
+#app input:focus,#app select:focus,#app textarea:focus,#gate input:focus{outline:none!important;border-color:#ff4d6d!important;box-shadow:0 0 4px #ff4d6d99,0 0 10px #ff4d6d55,inset 0 0 6px #ff4d6d22!important}
+#gate .field:focus-within label{color:#ff7a93!important;-webkit-text-fill-color:#ff7a93}
+#app .snavbtn.active,#app .tabbtn.active,#app .cats button.active,#app button.primary,#app .chk.on,#app .chk.adm.on,#gate button.primary{
+background:linear-gradient(135deg,rgba(255,77,109,.24),rgba(255,77,109,.08))!important;
+border:1.5px solid #ff4d6dcc!important;
+box-shadow:0 0 4px #ff4d6d99,0 0 10px #ff4d6d55,inset 0 0 8px #ff4d6d2a!important;
+backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;
+text-shadow:0 0 4px #ff4d6d88!important}
+}
+</style>
+<style>
+/* متنی که کاربر تایپ می‌کند سفید */
+@media screen{
+#app input:not(.q):not(.q):not(.q),#app select:not(.q):not(.q):not(.q),#app textarea:not(.q):not(.q):not(.q),#gate input:not(.q):not(.q){color:#fff!important;-webkit-text-fill-color:#fff!important;caret-color:#fff}
+#app input:-webkit-autofill,#gate input:-webkit-autofill{-webkit-text-fill-color:#fff!important}
+}
+</style>
+<style>
+#refreshBtn{position:absolute;top:0;left:52px;width:46px;height:46px;padding:0!important;font-size:24px;line-height:1;border-radius:50%;background:transparent!important;border:none!important;box-shadow:none!important;backdrop-filter:none!important;filter:drop-shadow(0 0 5px #2bc4ff);transition:transform .4s,filter .15s;cursor:pointer}
+#settingsBtn.hide~#refreshBtn{left:0}
+#refreshBtn:hover{filter:drop-shadow(0 0 7px #ffd400)}
+#refreshBtn:active{transform:rotate(360deg)}
+@media print{#refreshBtn{display:none!important}}
+</style>
+<style>
+/* پشت‌زمینه داخل برنامه: کمی بلور (موبایل) */
+@media screen and (max-width:750px){
+body:not(:has(#gate:not(.hide)))::before{filter:blur(4px)!important;transform:scale(1.06)!important;inset:0!important}
+}
+</style>
+<style>
+/* ===== طراحی نئونی شیشه‌ای ===== */
+@media screen{
+#app{--nc:#2ee6ff;--nc2:#7b5cff;--nr:#ff4d7d;--ny:#ffe600}
+/* دکمه‌ها و تب‌ها: شیشه‌ی تیره با لبه‌ی گرادینتی و درخشش نرم */
+#app .top .bar button:not(.primary),#app .snav .snavbtn,#app .tabs .tabbtn,#app .cats button{
+background:linear-gradient(135deg,rgba(46,230,255,.14),rgba(123,92,255,.10))!important;
+border:1px solid rgba(46,230,255,.55)!important;border-radius:14px!important;
+box-shadow:0 0 0 1px rgba(46,230,255,.08),0 0 12px rgba(46,230,255,.28),inset 0 1px 0 rgba(255,255,255,.18)!important;
+text-shadow:0 0 8px rgba(255,230,0,.45)!important;font-weight:700;letter-spacing:.2px;
+transition:box-shadow .2s,border-color .2s,transform .15s,background .2s}
+#app .top .bar button:not(.primary):hover,#app .snav .snavbtn:hover,#app .tabs .tabbtn:hover,#app .cats button:hover{
+border-color:#2ee6ff!important;box-shadow:0 0 0 1px rgba(46,230,255,.2),0 0 20px rgba(46,230,255,.55),inset 0 0 14px rgba(46,230,255,.18)!important}
+/* انتخاب‌شده: قرمز-صورتی نئونی ملایم */
+#app .snavbtn.active,#app .tabbtn.active,#app .cats button.active,#app button.primary,#app .chk.on,#app .chk.adm.on{
+background:linear-gradient(135deg,rgba(255,77,125,.34),rgba(255,77,125,.10))!important;
+border:1px solid var(--nr)!important;border-radius:14px!important;
+box-shadow:0 0 0 1px rgba(255,77,125,.15),0 0 14px rgba(255,77,125,.5),inset 0 0 12px rgba(255,77,125,.22)!important;
+text-shadow:0 0 8px rgba(255,77,125,.7)!important}
+/* پنل‌ها: شیشه با لبه‌ی روشن و خط نئونی بالا */
+#app .panel:not(.invoice-sheet){border:1px solid rgba(46,230,255,.28)!important;border-radius:20px!important;
+background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.03))!important;
+box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 22px rgba(46,230,255,.12),inset 0 1px 0 rgba(255,255,255,.35)!important}
+/* کارت بازی: قاب نئونی دوتایی آبی-بنفش */
+#app .game,#app .panel:not(.invoice-sheet) .game{border:1.5px solid transparent!important;border-radius:18px!important;
+background:linear-gradient(#070712,#070712) padding-box,linear-gradient(135deg,#2ee6ff,#7b5cff 55%,#ff4d7d) border-box!important;
+box-shadow:0 0 14px rgba(46,230,255,.35),0 0 30px rgba(123,92,255,.18)!important;transition:transform .2s,box-shadow .2s}
+#app .game:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(46,230,255,.6),0 0 42px rgba(123,92,255,.35)!important}
+#app .game .gameinfo h3{text-shadow:0 0 8px rgba(255,230,0,.55),0 1px 4px #000}
+/* فیلدها: لبه‌ی زرد کمرنگ، فوکوس نئونی آبی */
+#app input,#app select,#app textarea{border-radius:12px!important;border:1px solid rgba(255,230,0,.4)!important;transition:box-shadow .2s,border-color .2s}
+#app input:focus,#app select:focus,#app textarea:focus{border-color:var(--nc)!important;box-shadow:0 0 0 1px rgba(46,230,255,.3),0 0 14px rgba(46,230,255,.55)!important}
+/* عنوان‌ها */
+#app h1,#app h2{text-shadow:0 0 12px rgba(255,230,0,.5),0 0 28px rgba(255,230,0,.2)}
+}
+@media screen and (min-width:751px){
+#app .top .bar button:not(.primary),#app .snav .snavbtn,#app .tabs .tabbtn,#app .cats button{backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
+}
+</style>
+</head><body><main id="gate" class="panel"><div class="brand-stack gate-brand"><img class="brand-logo-lg" src="/static/assets/sahelstore-app.png" alt="لوگوی SahelStore"><div class="brand-fa">موبایل ساحل</div></div><h2 id="gateTitle">ورود به داشبورد</h2><p class="muted" id="gateText">نام کاربری و رمز عبور را وارد کنید.</p><form id="authForm"><div class="field"><label>نام کاربری</label><input id="username" required autocomplete="username"></div><div class="field"><label>رمز عبور</label><input id="password" type="password" required autocomplete="current-password" minlength="4"></div><button class="primary" id="authSubmit">ورود</button><div class="notice" id="error"></div></form><div id="gateQR" class="gate-qr"><div class="qr-box"><img id="gateQRImg" alt="QR ورود به پنل"></div><div class="muted">با گوشی اسکن کنید تا وارد صفحه ورود شوید</div></div></main>
+<div id="app" class="wrap hide"><header class="top"><div class="top-brand"><div class="brand-stack"><img class="brand-logo-lg" src="/static/assets/sahelstore-app.png" alt="لوگوی SahelStore"><div class="brand-fa">موبایل ساحل</div></div><div><h1>داشبورد مدیریت بازی‌ها</h1><div class="muted" id="who"></div></div></div><button type="button" id="logout" class="no-print" title="خروج">⏻ خروج</button><button type="button" id="refreshBtn" class="no-print" title="رفرش" aria-label="رفرش">🔄</button><button type="button" id="settingsBtn" class="hide" title="تنظیمات" aria-label="تنظیمات">⚙️</button><div class="bar no-print"><button id="homeBtn" class="hide">🏠 داشبورد</button><button id="ordersBtn" class="hide">سفارش‌ها</button><button id="qrBtn" class="hide">📱 QR پنل</button></div></header><section class="panel no-print" id="customerForm"><h3 id="formTitle">اطلاعات سفارش</h3><div class="fields"><input id="custName" placeholder="نام مشتری *" required maxlength="100"><input id="custPhone" placeholder="شماره تلفن *" required maxlength="40"><button class="primary" id="submitOrder">تأیید سفارش و نمایش فاکتور</button><button id="cancelEdit" type="button" class="hide">انصراف از ویرایش</button></div><div id="summary" class="muted">بازی انتخاب نشده</div><div id="total" class="total">مبلغ نهایی: ۰ تومان</div></section><div class="layout" style="margin-top:18px"><aside class="panel cats"><h3>دسته‌بندی‌ها</h3><div id="cats"></div><div id="catAdmin" class="adminbox hide"><h4>قیمت دسته فعال</h4><input id="catPrice" type="number" min="0" style="width:100%;padding:9px;background:#080803;color:#fff;border:1px solid #705600"><button id="savePrice" style="margin-top:8px">ذخیره قیمت</button></div></aside><section class="panel"><div id="mainTabs" class="tabs hide no-print"><button type="button" class="tabbtn active" data-tab="games">🎮 بازی‌ها</button><button type="button" class="tabbtn" data-tab="extras">🧩 قطعات و همراه دستگاه</button></div><div id="gamesPane"><div class="bar"><h2 id="catTitle">بازی‌ها</h2><input id="search" placeholder="جستجوی بازی..." class="no-print"></div><div id="games" class="grid"></div><div id="adminTools" class="adminbox hide no-print"><h3>افزودن بازی</h3><div class="fields"><input id="gameName" placeholder="نام بازی"><input id="gameVersion" placeholder="ورژن (اختیاری)"><input id="gameImage" placeholder="آدرس تصویر (اختیاری)"><input id="gameImageFile" type="file" accept="image/*" class="hide"><button type="button" id="pickImage">📁 انتخاب عکس از دستگاه</button><img id="imgPreview" class="hide" alt="پیش‌نمایش" style="width:48px;height:48px;object-fit:cover;border-radius:8px;border:1px solid #735900"><button id="addGame">افزودن</button></div></div></div><div id="extrasPane" class="hide no-print"><div class="field"><label>📋 فاکتور کدام مشتری؟</label><select id="exTarget"><option value="">— سفارش جدیدِ در حال ثبت —</option></select><div id="exTargetInfo" class="muted"></div><button type="button" id="exShow" class="hide">🧾 نمایش / چاپ فاکتور این مشتری</button></div><h3>🧩 قطعه / خدمات (با مبلغ)</h3><p class="muted">هر چیزی که مشتری خواسته (قطعه، خدمات و...) را با مبلغش اضافه کنید؛ در فاکتور و جمع مبلغ نهایی می‌آید.</p><div class="fields"><input id="exName" placeholder="نام قطعه یا خدمات" maxlength="100"><input id="exPrice" type="number" min="0" placeholder="مبلغ (تومان)"><button type="button" id="exAdd" class="primary">＋ افزودن به فاکتور</button></div><div id="exList"></div><h3 style="margin-top:22px">🎒 همراه دستگاه مشتری (بدون مبلغ)</h3><p class="muted">اگر مشتری کابل، دسته یا هر چیز دیگری همراه دستگاهش آورده، اینجا ثبت کنید تا در فاکتور بیاید.</p><div class="fields"><input id="accName" placeholder="مثلاً کابل شارژ، دسته، کیف..." maxlength="100"><button type="button" id="accAdd">＋ ثبت همراه دستگاه</button></div><div id="accList"></div></div></section></div>
+<section id="settings" class="panel adminbox hide no-print"><div class="settings-head"><button type="button" id="settingsBack">← بازگشت به داشبورد</button></div><div class="sset"><nav class="snav"><button type="button" class="snavbtn active" data-sp="general">⚙️ تنظیمات</button><button type="button" class="snavbtn" data-sp="cats">🗂️ دسته‌بندی‌ها</button><button type="button" class="snavbtn" data-sp="users">👥 کاربران</button></nav><div class="sbody"><div class="spane" data-pane="general"><h2>⚙️ تنظیمات</h2><button type="button" class="primary" onclick="openNetworkSettings()">🌐 تنظیمات شبکه (F3)</button><h3>اطلاعات فروشگاه برای رسید مشتری</h3><form id="storeForm" class="fields"><input id="storePhone" placeholder="شماره تماس فروشگاه" maxlength="40" inputmode="tel" dir="ltr"><input id="storeCard" placeholder="شماره کارت (۱۶ رقم)" maxlength="40" inputmode="numeric" dir="ltr"><button class="primary">ذخیره</button></form><div id="storeMsg" class="muted"></div><div class="muted" style="font-size:12px">این دو مورد فقط روی رسید تصویری مشتری چاپ می‌شوند، نه روی فاکتور چاپی مدیر.</div></div><div class="spane hide" data-pane="cats"><h2>🗂️ دسته‌بندی‌ها</h2><h3>افزودن دسته‌بندی</h3><form id="newCat" class="fields"><input id="ncIcon" placeholder="آیکن (مثلاً 🎮)" maxlength="8" style="max-width:150px"><input id="ncName" placeholder="نام دسته‌بندی" required maxlength="60"><input id="ncPrice" type="number" min="0" placeholder="قیمت (تومان)"><button class="primary">افزودن</button></form><h3>ویرایش دسته‌بندی‌ها</h3><div id="catList"></div></div><div class="spane hide" data-pane="users"><h2>👥 کاربران</h2><h3>تعریف کاربر</h3><form id="newUser" class="fields"><input id="newName" placeholder="نام کاربری" required maxlength="40"><input id="newPass" type="password" placeholder="رمز عبور حداقل ۴ کاراکتر" required minlength="4"><select id="newRole"><option value="customer">مشتری — ثبت سفارش</option><option value="admin">مدیر — دسترسی کامل</option></select><button class="primary">ایجاد کاربر</button></form><div id="users"></div></div><div class="spane hide" data-pane="orders"><h2>🧾 سفارش‌های ثبت‌شده</h2><div id="orders"></div></div></div></div></section>
+<div id="qrModal" class="hide no-print" style="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:14px"><div style="max-height:94vh;overflow:auto;text-align:center"><div style="display:flex;justify-content:center;margin-bottom:8px"><button type="button" id="qrClose">✕ بستن</button></div><div id="qrCard" class="qr-card"><img class="qr-logo" src="/static/assets/sahelstore-app.png" alt=""><div class="qr-title">موبایل ساحل</div><div class="qr-sub">اسکن کنید و وارد پنل شوید</div><div class="qr-box"><img id="panelQR" alt="QR ورود به پنل"></div><div id="panelUrl" class="qr-url"></div><div id="qrWarn" class="muted hide">⚠️ الان با آدرس localhost باز کرده‌اید؛ موبایل نمی‌تواند به آن وصل شود. پنل را با آدرس IP همین کامپیوتر (مثلاً 192.168.1.20:8080) باز کنید و دوباره QR را بسازید.</div><button type="button" id="qrDownload" class="primary">⬇️ دانلود تصویر QR</button></div></div></div><section id="invoice" class="hide"><div class="panel invoice-sheet" style="max-width:560px;margin:20px auto;padding:22px"><div id="invoiceNo" class="invoice-no"></div><div class="invoice-hero"><div class="invoice-logo"><img class="logo-screen" src="/static/assets/sahelstore-app.png" alt="لوگوی SahelStore"><img class="logo-print" src="/static/assets/sahelstore-invoice.png" alt="لوگوی SahelStore"></div><div><div class="invoice-brand">GAME LIBRARY • STORE COPY</div><h2>فاکتور بازی‌ها</h2><span class="invoice-tag">رسید فروشگاه</span></div></div><div id="invoiceInfo" class="invoice-meta"></div><div class="invoice-table-wrap"><table><thead><tr><th class="chkcol">نصب</th><th>ردیف</th><th>نام بازی</th><th>دسته</th><th>قیمت</th></tr></thead><tbody id="invoiceRows"></tbody></table></div><div id="invoiceAcc" class="invoice-acc hide"></div><div class="invoice-totalbox"><span>مبلغ نهایی قابل پرداخت</span><strong id="invoiceTotal"></strong></div><div class="invoice-footer"><div class="thanks">🎮 از اینکه فروشگاه ما را انتخاب کردید، سپاسگزاریم!</div><div>امیدواریم از تجربه بازی‌تان لذت ببرید؛ منتظر دیدار دوباره شما هستیم.</div></div><div class="invoice-actions no-print"><button class="primary" id="printBtn" onclick="window.print()">🖨️ چاپ فاکتور A5</button> <button id="saveImg" type="button">📱 دریافت رسید</button></div></div></section></div>
+<style>
+#netModal{position:fixed;inset:0;z-index:9999;background:#000b;display:flex;align-items:center;justify-content:center;padding:14px}#netModal.hide{display:none}
+#netModal .box{width:min(560px,100%);max-height:92vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 18px 60px #000a}
+#netModal h2{margin:0 0 10px;text-align:center}#netModal .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}#netModal label{display:block;font-size:13px;color:var(--muted);margin-bottom:3px;text-align:center}
+#netModal input,#netModal select{width:100%;padding:9px;border-radius:8px;border:1px solid var(--line);background:#050914;color:var(--text);direction:ltr}#netModal input:disabled{opacity:.45}
+#netModal .modes{display:flex;gap:8px;justify-content:center;margin:10px 0}#netModal .modes label{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;color:var(--text);cursor:pointer;margin:0}#netModal .modes input{width:auto}
+#netModal .cur{background:#0d1422;border:1px dashed #7b671e;border-radius:12px;padding:10px;text-align:center;line-height:2}#netModal .cur b{color:var(--accent);direction:ltr;unicode-bidi:embed}
+#netModal .qrm{display:flex;justify-content:center;margin:10px 0}#netModal .qrm img{width:150px;height:150px;background:#fff;padding:6px;border-radius:8px}
+#netModal .btns{display:flex;gap:8px;justify-content:center;margin-top:12px}#netMsg{text-align:center;min-height:22px;margin-top:8px}#netMsg.err{color:#ff7b7b}#netMsg.good{color:#7dffb0}
+</style>
+<div id="netModal" class="hide no-print" role="dialog" aria-modal="true"><div class="box"><h2>🌐 تنظیمات شبکه <small class="muted">(F3)</small></h2>
+<div class="cur"><div>آدرس فعلی پنل: <b id="netUrl" dir="ltr">—</b> <span id="netActual" class="muted"></span></div></div>
+<div class="qrm"><img id="netQR" alt="QR پنل"></div>
+<div class="modes"><label><input type="radio" name="netMode" value="dhcp" checked> DHCP (خودکار — پیش‌فرض)</label><label><input type="radio" name="netMode" value="manual"> IP دستی</label></div>
+<div><label>کارت شبکه</label><select id="netIface"></select></div>
+<div class="row"><div><label>آدرس IP</label><input id="netIp" placeholder="192.168.1.20" inputmode="decimal" autocomplete="off"></div><div><label>ساب‌نت‌ماسک یا پیشوند</label><input id="netMask" placeholder="255.255.255.0" value="255.255.255.0" autocomplete="off"></div></div>
+<div class="row"><div><label>گیت‌وی (اختیاری)</label><input id="netGw" placeholder="192.168.1.1" autocomplete="off"></div><div><label>DNS (اختیاری، با ویرگول)</label><input id="netDns" placeholder="8.8.8.8, 1.1.1.1" autocomplete="off"></div></div>
+<div class="muted" style="font-size:12px;text-align:center">در حالت DHCP، IP را روتر می‌دهد و QR خودکار با همان ساخته می‌شود. فقط وقتی «IP دستی» را انتخاب و ذخیره کنید، IP ثابت اعمال می‌شود. تغییر IP نیاز به اجرای برنامه با Administrator/root دارد.</div>
+<div id="netMsg"></div><div class="btns"><button type="button" id="netApply" class="primary">ذخیره و اعمال</button><button type="button" id="netRefresh">🔄 بروزرسانی</button><button type="button" id="netClose">بستن (Esc)</button></div></div></div>
+<script>
+(function(){const $=id=>document.getElementById(id);let busy=false;
+const modeVal=()=>document.querySelector('input[name=netMode]:checked').value;
+function sync(){const m=modeVal()==='manual';['netIp','netMask','netGw','netDns'].forEach(i=>$(i).disabled=!m)}
+document.querySelectorAll('input[name=netMode]').forEach(r=>r.onchange=sync);
+function msg(t,c){$('netMsg').textContent=t||'';$('netMsg').className=c||''}
+async function netApi(m,body){const r=await fetch('/api/network',{method:m,credentials:'same-origin',headers:{'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const d=await r.json().catch(()=>({error:'پاسخ نامعتبر'}));if(!r.ok)throw Error(d.error||'خطا');return d}
+async function qr(){try{const r=await fetch('/api/panel-qr.svg?'+Date.now());if(r.ok){$('netQR').src=URL.createObjectURL(await r.blob());const u=r.headers.get('X-Panel-Url');if(u){$('netUrl').textContent=u;const p=document.getElementById('panelUrl');if(p)p.textContent=u}if(typeof loadPanelQR==='function')loadPanelQR()}}catch(e){}}
+async function load(fill){try{const d=await netApi('GET');$('netUrl').textContent=d.url;
+ $('netActual').textContent=d.actual_mode?'('+(d.actual_mode==='dhcp'?'گرفته‌شده از DHCP':'IP دستی')+(d.actual_iface?' — '+d.actual_iface:'')+')':'';
+ if(fill){const sel=$('netIface');sel.innerHTML='';const seen=new Set();d.ifaces.forEach(i=>{if(!i.name||seen.has(i.name))return;seen.add(i.name);const o=document.createElement('option');o.value=i.name;o.textContent=i.name+(i.ip?' — '+i.ip:'');sel.appendChild(o)});
+  const c=d.config;sel.value=c.iface||d.actual_iface||sel.value;document.querySelector('input[name=netMode][value='+c.mode+']').checked=true;
+  if(c.mode==='manual'){$('netIp').value=c.ip;$('netMask').value=c.prefix;$('netGw').value=c.gateway;$('netDns').value=(c.dns||[]).join(', ')}else{const cur=d.ifaces.find(i=>i.ip===d.ip);if(cur){$('netIp').value=cur.ip;if(cur.prefix)$('netMask').value=cur.prefix}}
+  sync()}
+ if(d.last&&d.last.state==='error')msg('خطا در اعمال: '+d.last.message,'err');else if(d.last&&d.last.state==='ok'&&Date.now()/1000-d.last.time<120)msg('✔ '+d.last.message,'good');
+ if(!d.is_admin)msg('⚠️ برنامه بدون دسترسی Administrator/root اجرا شده؛ تغییر IP ممکن نیست (نمایش و QR کار می‌کند).','err');
+ await qr();return d}catch(e){msg(e.message,'err')}}
+async function open_(){$('netModal').classList.remove('hide');msg('');await load(true)}
+function close_(){$('netModal').classList.add('hide')}
+$('netClose').onclick=close_;$('netRefresh').onclick=()=>{msg('');load(false)};$('netModal').addEventListener('mousedown',e=>{if(e.target===$('netModal'))close_()});
+$('netApply').onclick=async()=>{if(busy)return;const manual=modeVal()==='manual';
+ if(!confirm(manual?'IP دستی روی این کامپیوتر اعمال می‌شود و اتصال فعلی ممکن است قطع شود. ادامه می‌دهید؟':'کارت شبکه روی DHCP قرار می‌گیرد و IP ممکن است عوض شود. ادامه می‌دهید؟'))return;
+ busy=true;try{const r=await netApi('POST',{mode:modeVal(),iface:$('netIface').value,ip:$('netIp').value.trim(),prefix:$('netMask').value.trim(),gateway:$('netGw').value.trim(),dns:$('netDns').value});msg(r.note,'good');
+  for(let k=0;k<8;k++){await new Promise(r=>setTimeout(r,3000));try{const d=await load(false);if(d&&d.last&&d.last.state!=='applying'&&d.last.time>Date.now()/1000-60){if(d.last.state==='ok'&&d.url&&d.url.indexOf(location.host)<0)msg('✔ اعمال شد. آدرس جدید: '+d.url+' — صفحه را با این آدرس باز کنید.','good');break}}catch(e){}}
+ }catch(e){msg(e.message,'err')}busy=false};
+document.addEventListener('keydown',e=>{if(e.key==='F3'){e.preventDefault();const app=document.getElementById('app');if(app&&app.classList.contains('hide'))return;if(document.getElementById('settingsBtn').classList.contains('hide'))return;$('netModal').classList.contains('hide')?open_():close_()}else if(e.key==='Escape'&&!$('netModal').classList.contains('hide'))close_()});
+window.openNetworkSettings=open_;sync()})();
+</script>
+<script>
+const $=id=>document.getElementById(id);let me=null,extras=[],exOrders=[],categories=[],active=null,selected=new Set(),games=[],allGameCache=new Map(),setup=false;
+async function api(path,opts={}){let r=await fetch('/api'+path,{credentials:'same-origin',headers:{'Content-Type':'application/json',...(opts.headers||{})},...opts});if(r.status===401&&me&&path!=='/login'&&path!=='/logout'){location.reload();return new Promise(()=>{})}lastAct=Date.now();let d=await r.json().catch(()=>({error:'پاسخ نامعتبر سرور'}));if(!r.ok)throw Error(d.error||'خطا');return d}
+function num(n){return Number(n||0).toLocaleString('fa-IR')}function jalali(iso){return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'2-digit',day:'2-digit'}).format(iso?new Date(iso+'T12:00:00'):new Date())}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function boot(){try{let s=await api('/status');setup=!s.initialized;$('gateTitle').textContent=setup?'ساخت مدیر اصلی':'ورود به داشبورد';$('gateText').textContent=setup?'برای اولین بار نام کاربری و رمز قوی مدیر را تعریف کنید.':'نام کاربری و رمز عبور را وارد کنید.';$('authSubmit').textContent=setup?'ایجاد مدیر و ورود':'ورود';$('password').minLength=setup?4:1;let x=await api('/me');me=x.user;await showApp()}catch(e){if(e.message==='unauthorized'){} else if(e.message!=='unauthorized')$('error').textContent=e.message}}
+$('authForm').onsubmit=async e=>{e.preventDefault();$('error').textContent='';try{if(setup)await api('/setup',{method:'POST',body:JSON.stringify({username:$('username').value,password:$('password').value})});else await api('/login',{method:'POST',body:JSON.stringify({username:$('username').value,password:$('password').value})});me=(await api('/me')).user;await showApp()}catch(x){$('error').textContent=x.message}};
+async function showApp(){ $('gate').classList.add('hide');$('app').classList.remove('hide');$('who').textContent=`کاربر: ${me.username} | نقش: ${me.role==='admin'?'مدیر':'مشتری'}`;$('settingsBtn').classList.toggle('hide',me.role!=='admin');$('ordersBtn').classList.toggle('hide',me.role!=='admin');$('homeBtn').classList.toggle('hide',me.role!=='admin');$('adminTools').classList.toggle('hide',me.role!=='admin');$('catAdmin').classList.toggle('hide',me.role!=='admin');$('mainTabs').classList.toggle('hide',me.role!=='admin');$('qrBtn').classList.toggle('hide',me.role!=='admin');{const u=loadUI();if(u.active)active=u.active;if(me.role==='admin'){$('settings').classList.toggle('orders-mode',!!u.omode);if(location.hash==='#settings')setSPane(u.omode?'orders':(['general','cats','users'].includes(u.spane)?u.spane:'general'))}}if(me.role!=='admin')viewSettings(false);else applyView();await loadCategories();if(active&&!categories.some(c=>c.id===active)){active=categories[0]?.id;renderCats();await loadGames()}if(me.role==='admin'&&['games','extras'].includes(loadUI().tab))setTab(loadUI().tab);if(me.role==='admin'){await loadUsersAndOrders();loadPanelQR()}}
+$('refreshBtn').onclick=()=>location.reload();
+$('logout').onclick=async()=>{await api('/logout',{method:'POST'});location.reload()};async function loadCategories(){let d=await api('/categories');categories=d.categories;if(!active)active=categories[0]?.id;renderCats();renderCatAdmin();await loadGames()}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('#cats [data-cat]');if(b)saveUI({active:b.dataset.cat})});
+function renderCats(){$('cats').innerHTML=categories.map(c=>`<button class="${c.id===active?'active':''}" data-cat="${esc(c.id)}">${esc(c.icon)} ${esc(c.name)} <span class="muted">(${num(c.count)})</span></button>`).join('');$('cats').querySelectorAll('[data-cat]').forEach(b=>b.onclick=async()=>{active=b.dataset.cat;renderCats();await loadGames()});let c=categories.find(x=>x.id===active);$('catPrice').value=c?.price||0;$('catTitle').textContent=c?.name||'بازی‌ها'}
+async function loadGames(){let d=await api('/games?category='+encodeURIComponent(active));games=d.games;games.forEach(g=>allGameCache.set(g.id,g));renderGames()}
+function syncSel(){const adm=me&&me.role==='admin';$('customerForm').classList.toggle('hide',!!adm&&!editingId)}
+function renderGames(){syncSel();const canSel=!(me&&me.role==='admin')||!!editingId;let q=$('search').value.toLowerCase();let arr=games.filter(g=>g.name.toLowerCase().includes(q));$('games').innerHTML=arr.map(g=>`<article class="game"><div class="cover">${g.image?`<img class="cbg" src="${esc(g.image)}" alt="" aria-hidden="true" loading="lazy"><img src="${esc(g.image)}" alt="${esc(g.name)}" loading="lazy">`:'<div style="padding:40px;text-align:center">🎮</div>'}${g.version?`<span class="version">${esc(g.version)}</span>`:''}</div><div class="gameinfo"><h3>${esc(g.name)}</h3><div class="muted">${num(g.price)} تومان</div>${canSel?`<button data-game="${esc(g.id)}" class="${selected.has(g.id)?'primary':''}">${selected.has(g.id)?'✓ انتخاب شد':'＋ انتخاب بازی'}</button>`:''}${me.role==='admin'?`<div class="row2"><button data-ren="${esc(g.id)}">✏️ نام</button><button data-img="${esc(g.id)}">🖼️ عکس</button><button data-del="${esc(g.id)}">حذف</button></div>`:''}</div></article>`).join('')||'<p>بازی‌ای در این دسته وجود ندارد.</p>';$('games').querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{let id=b.dataset.game;selected.has(id)?selected.delete(id):selected.add(id);renderGames();renderTotal()});$('games').querySelectorAll('[data-ren]').forEach(b=>b.onclick=async()=>{const g=games.find(x=>x.id===b.dataset.ren);const n=prompt('نام جدید بازی:',g?g.name:'');if(n===null)return;if(!n.trim())return alert('نام بازی را بنویسید.');try{await api('/games/'+b.dataset.ren,{method:'PATCH',body:JSON.stringify({name:n.trim()})});await loadGames()}catch(e){alert(e.message)}});$('games').querySelectorAll('[data-img]').forEach(b=>b.onclick=()=>changeGameImage(b.dataset.img));$('games').querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{if(confirm('این بازی حذف شود؟')){await api('/games/'+b.dataset.del,{method:'DELETE'});selected.delete(b.dataset.del);await loadGames();await loadCategories()}});renderTotal()}
+function renderTotal(){let chosen=[...selected].map(id=>allGameCache.get(id)).filter(Boolean);let items=extras.filter(e=>e.kind==='item'),accs=extras.filter(e=>e.kind==='acc');let total=chosen.reduce((s,g)=>s+g.price,0)+items.reduce((s,e)=>s+e.price,0);let parts=[];if(chosen.length)parts.push(num(chosen.length)+' بازی: '+chosen.map(g=>g.name).join('، '));if(items.length)parts.push(num(items.length)+' قطعه/خدمات: '+items.map(e=>e.name).join('، '));if(accs.length)parts.push('همراه دستگاه: '+accs.map(e=>e.name).join('، '));$('summary').textContent=parts.join(' | ')||'بازی انتخاب نشده';$('total').textContent='مبلغ نهایی: '+num(total)+' تومان'}
+$('search').oninput=renderGames;$('savePrice').onclick=async()=>{try{await api('/categories/'+active,{method:'PATCH',body:JSON.stringify({price:Number($('catPrice').value||0)})});await loadCategories();await loadGames()}catch(e){alert(e.message)}};
+function fileToDataURL(file,max=500){return new Promise((res,rej)=>{if(!file||!file.type.startsWith('image/'))return rej(Error('فایل انتخاب‌شده عکس نیست.'));const u=URL.createObjectURL(file),i=new Image();i.onload=()=>{const k=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext('2d').drawImage(i,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',.85))};i.onerror=()=>{URL.revokeObjectURL(u);rej(Error('خواندن عکس ممکن نشد.'))};i.src=u})}
+function pickImageFile(){return new Promise(res=>{const f=document.createElement('input');f.type='file';f.accept='image/*';f.onchange=()=>res(f.files[0]||null);f.click()})}
+async function changeGameImage(id){try{const f=await pickImageFile();if(!f)return;const img=await fileToDataURL(f);await api('/games/'+id,{method:'PATCH',body:JSON.stringify({image:img})});await loadGames()}catch(e){alert(e.message)}}
+$('pickImage').onclick=()=>$('gameImageFile').click();
+$('gameImageFile').onchange=async()=>{const f=$('gameImageFile').files[0];if(!f)return;try{const d=await fileToDataURL(f);$('gameImage').value=d;$('imgPreview').src=d;$('imgPreview').classList.remove('hide')}catch(e){alert(e.message)}};
+$('gameImage').oninput=()=>{const v=$('gameImage').value.trim();$('imgPreview').src=v;$('imgPreview').classList.toggle('hide',!v)};
+$('addGame').onclick=async()=>{if(!$('gameName').value.trim())return;await api('/games',{method:'POST',body:JSON.stringify({category_id:active,name:$('gameName').value.trim(),version:$('gameVersion').value.trim(),image:$('gameImage').value.trim()})});$('gameName').value='';$('gameVersion').value='';$('gameImage').value='';$('gameImageFile').value='';$('imgPreview').classList.add('hide');await loadGames();await loadCategories()};
+$('submitOrder').onclick=async()=>{let chosen=[...selected].map(id=>allGameCache.get(id)).filter(Boolean);if(!chosen.length&&!extras.length)return alert('ابتدا بازی یا مورد اضافه انتخاب کنید.');if(!$('custName').value.trim()){$('custName').focus();return alert('نام مشتری را وارد کنید.')}if(!$('custPhone').value.trim()){$('custPhone').focus();return alert('شماره تلفن مشتری را وارد کنید.')}try{let body=JSON.stringify({name:$('custName').value.trim(),phone:$('custPhone').value.trim(),games:chosen.map(g=>g.id),extras:me.role==='admin'?extras:[]});let o=editingId?await api('/orders/'+editingId,{method:'PUT',body}):await api('/orders',{method:'POST',body});let wasEdit=!!editingId;endEdit();selected.clear();extras=[];renderExtras();renderTotal();await showInvoice(o,me.role!=='admin');renderGames();if(me.role==='admin')await loadUsersAndOrders()}catch(e){alert(e.message)}};
+async function showInvoice(o,autoDl=false){viewSettings(false);$('invoice').classList.remove('hide');$('invoiceNo').innerHTML='شماره فاکتور: <b>'+num(Number(o.number))+'</b>';$('invoiceInfo').innerHTML=`<div><small>تاریخ ثبت</small><b>${esc(jalali(o.date))}</b></div><div><small>نام مشتری</small><b>${esc(o.name||'—')}</b></div><div><small>شماره تماس</small><b>${esc(o.phone||'—')}</b></div>`;$('invoiceRows').innerHTML=o.games.map((g,i)=>`<tr><td class="chkcol"><span class="chk${g.installed?' on':''}${me&&me.role==='admin'?' adm':''}" data-oid="${esc(o.id)}" data-rid="${esc(g.rid)}" title="نصب شد">${g.installed?'✓':''}</span></td><td>${num(i+1)}</td><td>${esc(g.name)}</td><td>${esc(g.category)}</td><td>${num(g.price)} تومان</td></tr>`).join('');{const ex=o.extras||[],items=ex.filter(e=>e.kind==='item'),accs=ex.filter(e=>e.kind==='acc');$('invoiceRows').insertAdjacentHTML('beforeend',items.map((e,k)=>`<tr><td class="chkcol"></td><td>${num(o.games.length+k+1)}</td><td>${esc(e.name)}</td><td>قطعه / خدمات</td><td>${num(e.price)} تومان</td></tr>`).join(''));$('invoiceAcc').classList.toggle('hide',!accs.length);$('invoiceAcc').innerHTML=accs.length?'<b>🎒 همراه دستگاه مشتری:</b> '+accs.map(e=>esc(e.name)).join('، '):''}$('invoiceTotal').textContent=num(o.total)+' تومان';$('invoice').scrollIntoView({behavior:'smooth'});lastOrder=o;$('printBtn').classList.toggle('hide',!(me&&me.role==='admin'));if(autoDl)saveReceipt(o,true)}
+function setTab(t){saveUI({tab:t});if(t==='extras')refreshExOrders();$('gamesPane').classList.toggle('hide',t!=='games');$('extrasPane').classList.toggle('hide',t!=='extras');document.querySelectorAll('#mainTabs .tabbtn').forEach(b=>b.classList.toggle('active',b.dataset.tab===t))}
+document.querySelectorAll('#mainTabs .tabbtn').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+function exTid(){return $('exTarget').value}
+function exTargetOrder(){const t=exTid();return t?exOrders.find(o=>o.id===t)||null:null}
+function fillExTargets(){const sel=$('exTarget'),cur=sel.value;sel.innerHTML='<option value="">— سفارش جدیدِ در حال ثبت —</option>'+exOrders.map(o=>`<option value="${esc(o.id)}">فاکتور ${num(Number(o.number))} — ${esc(o.name||'بدون نام')}${o.phone?' — '+esc(o.phone):''}</option>`).join('');sel.value=exOrders.some(o=>o.id===cur)?cur:'';renderExtras()}
+async function refreshExOrders(){try{exOrders=(await api('/orders')).orders;fillExTargets();if(me&&me.role==='admin')loadUsersAndOrders()}catch(e){}}
+function renderExtras(){const to=exTargetOrder(),list=to?(to.extras||[]):extras;const row=(e,i)=>`<div class="exrow"><span>${esc(e.name)}${e.kind==='item'?' — <b>'+num(e.price)+' تومان</b>':''}</span><button type="button" class="exdel" data-exdel="${to?e.rid:i}">حذف</button></div>`;$('exList').innerHTML=list.map((e,i)=>e.kind==='item'?row(e,i):'').join('')||'<div class="muted">موردی اضافه نشده.</div>';$('accList').innerHTML=list.map((e,i)=>e.kind==='acc'?row(e,i):'').join('')||'<div class="muted">موردی ثبت نشده.</div>';$('exTargetInfo').textContent=to?`موارد زیر مستقیم روی فاکتور شماره ${num(Number(to.number))} (${to.name||'بدون نام'}) ذخیره می‌شود. جمع فعلی: ${num(to.total)} تومان`:'مشتری انتخاب نشده؛ موارد به سفارش جدیدِ در حال ثبت اضافه می‌شود.';$('exShow').classList.toggle('hide',!to);document.querySelectorAll('[data-exdel]').forEach(b=>b.onclick=async()=>{if(to){try{await api('/orders/'+to.id+'/extras/'+b.dataset.exdel,{method:'DELETE'});await refreshExOrders()}catch(e){alert(e.message)}}else{extras.splice(Number(b.dataset.exdel),1);renderExtras();renderTotal()}})}
+async function exSubmit(item){const to=exTargetOrder();if(to){try{await api('/orders/'+to.id+'/extras',{method:'POST',body:JSON.stringify(item)});await refreshExOrders();return true}catch(e){alert(e.message);return false}}extras.push(item);renderExtras();renderTotal();return true}
+$('exTarget').onchange=renderExtras;
+$('exShow').onclick=async()=>{const to=exTargetOrder();if(!to)return;try{showInvoice(await api('/orders/'+to.id))}catch(e){alert(e.message)}};
+$('exAdd').onclick=async()=>{const n=$('exName').value.trim();if(!n)return alert('نام قطعه یا خدمات را بنویسید.');const p=Math.max(0,Math.floor(Number($('exPrice').value||0)));if(!isFinite(p))return alert('مبلغ نامعتبر است.');if(await exSubmit({kind:'item',name:n,price:p})){$('exName').value='';$('exPrice').value=''}};
+$('accAdd').onclick=async()=>{const n=$('accName').value.trim();if(!n)return alert('نام وسیله را بنویسید.');if(await exSubmit({kind:'acc',name:n,price:0}))$('accName').value=''};
+renderExtras();
+$('invoiceRows').onclick=async e=>{const b=e.target.closest('.chk.adm');if(!b)return;const on=!b.classList.contains('on');try{await api('/orders/'+b.dataset.oid+'/games/'+b.dataset.rid,{method:'PATCH',body:JSON.stringify({installed:on})});b.classList.toggle('on',on);b.textContent=on?'✓':'';if(lastOrder){const g=lastOrder.games.find(x=>String(x.rid)===b.dataset.rid);if(g)g.installed=on}}catch(err){alert(err.message)}};
+function applyView(){const on=location.hash==='#settings'&&me&&me.role==='admin';$('app').classList.toggle('settings-mode',on);$('settings').classList.toggle('hide',!on);if(on){window.scrollTo(0,0);loadStoreForm()}}
+function viewSettings(on){if(on&&location.hash!=='#settings')history.pushState(null,'','#settings');if(!on&&location.hash==='#settings')history.replaceState(null,'',location.pathname+location.search);applyView()}
+window.addEventListener('popstate',applyView);
+let lastAct=Date.now();
+['mousemove','mousedown','keydown','touchstart','scroll','click'].forEach(ev=>addEventListener(ev,()=>{lastAct=Date.now()},{passive:true,capture:true}));
+setInterval(async()=>{if(me&&Date.now()-lastAct>20*60*1000){me=null;try{await fetch('/api/logout',{method:'POST',credentials:'same-origin'})}catch(e){}location.reload()}},15000);
+const UIK='gfs_ui';
+function loadUI(){try{return JSON.parse(localStorage.getItem(UIK)||'{}')||{}}catch(e){return{}}}
+function saveUI(o){try{localStorage.setItem(UIK,JSON.stringify({...loadUI(),...o}))}catch(e){}}
+function renderCatAdmin(){const box=$('catList');if(!box)return;box.innerHTML=categories.map(c=>`<div class="fields catrow" data-id="${esc(c.id)}" style="margin-bottom:8px"><input class="ci" value="${esc(c.icon)}" maxlength="8" style="max-width:90px"><input class="cn" value="${esc(c.name)}" maxlength="60"><input class="cp" type="number" min="0" value="${esc(c.price)}" placeholder="قیمت"><button type="button" class="cs primary">ذخیره</button></div>`).join('')||'<div class="muted">دسته‌ای وجود ندارد.</div>';box.querySelectorAll('.catrow').forEach(r=>r.querySelector('.cs').onclick=async()=>{try{await api('/categories/'+r.dataset.id,{method:'PATCH',body:JSON.stringify({name:r.querySelector('.cn').value,icon:r.querySelector('.ci').value,price:Number(r.querySelector('.cp').value||0)})});await loadCategories()}catch(e){alert(e.message)}})}
+$('newCat').onsubmit=async e=>{e.preventDefault();try{let r=await api('/categories',{method:'POST',body:JSON.stringify({name:$('ncName').value,icon:$('ncIcon').value,price:Number($('ncPrice').value||0)})});$('newCat').reset();active=r.id;saveUI({active});await loadCategories()}catch(er){alert(er.message)}};
+function setSPane(n){saveUI({spane:n});document.querySelectorAll('#settings .snavbtn').forEach(b=>b.classList.toggle('active',b.dataset.sp===n));document.querySelectorAll('#settings .spane').forEach(x=>x.classList.toggle('hide',x.dataset.pane!==n))}
+document.querySelectorAll('#settings .snavbtn').forEach(b=>b.onclick=()=>setSPane(b.dataset.sp));
+document.addEventListener('mousedown',e=>{const t=e.target;if(t!==$('qrModal')&&t!==$('netModal'))return;const x=e.clientX,y=e.clientY;t.classList.add('hide');const el=document.elementFromPoint(x,y),b=el&&el.closest&&el.closest('.top button');e.preventDefault();e.stopPropagation();if(b&&!b.classList.contains('hide'))b.click()},true);
+function closeOverlays(){$('qrModal').classList.add('hide');$('netModal').classList.add('hide')}
+$('homeBtn').onclick=()=>{closeOverlays();viewSettings(false);window.scrollTo(0,0)};
+$('settingsBtn').onclick=()=>{closeOverlays();$('settings').classList.remove('orders-mode');saveUI({omode:false});setSPane('general');viewSettings(true)};
+$('settingsBack').onclick=()=>viewSettings(false);
+$('ordersBtn').onclick=()=>{closeOverlays();$('settings').classList.add('orders-mode');saveUI({omode:true});setSPane('orders');viewSettings(true)};
+function qrOpen(){$('qrModal').classList.remove('hide');loadPanelQR()}
+function qrShut(){$('qrModal').classList.add('hide')}
+$('qrBtn').onclick=()=>{$('netModal').classList.add('hide');qrOpen()};$('qrClose').onclick=qrShut;$('qrModal').onclick=e=>{if(e.target===$('qrModal'))qrShut()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('qrModal').classList.contains('hide'))qrShut()});
+async function loadUsersAndOrders(){let [u,o]=await Promise.all([api('/users'),api('/orders')]);exOrders=o.orders;fillExTargets();$('users').innerHTML='<h4>کاربران</h4>'+u.users.map(x=>`<div style="padding:8px;border-bottom:1px solid #554600">${esc(x.username)} — ${x.role==='admin'?'مدیر':'مشتری'} ${x.username!==me.username?`<button data-userdel="${esc(x.id)}">غیرفعال‌سازی</button>`:''}</div>`).join('');$('users').querySelectorAll('[data-userdel]').forEach(b=>b.onclick=async()=>{if(confirm('کاربر غیرفعال شود؟')){await api('/users/'+b.dataset.userdel,{method:'DELETE'});await loadUsersAndOrders()}});$('orders').innerHTML=o.orders.map(x=>`<div style="padding:10px;border-bottom:1px solid #554600">فاکتور ${esc(x.number)} — ${esc(x.name)} — ${num(x.total)} تومان <button data-print="${esc(x.id)}">مشاهده / چاپ</button> <button data-edit="${esc(x.id)}">ویرایش</button> <button data-orderdel="${esc(x.id)}" class="danger">حذف</button></div>`).join('')||'سفارشی ثبت نشده';$('orders').querySelectorAll('[data-print]').forEach(b=>b.onclick=async()=>showInvoice(await api('/orders/'+b.dataset.print)));$('orders').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>startEdit(b.dataset.edit));$('orders').querySelectorAll('[data-orderdel]').forEach(b=>b.onclick=async()=>{if(!confirm('این فاکتور برای همیشه حذف شود؟'))return;try{await api('/orders/'+b.dataset.orderdel,{method:'DELETE'});if(editingId===b.dataset.orderdel)endEdit();if(lastOrder&&lastOrder.id===b.dataset.orderdel){$('invoice').classList.add('hide');lastOrder=null}await loadUsersAndOrders()}catch(e){alert(e.message)}})}
+$('newUser').onsubmit=async e=>{e.preventDefault();try{await api('/users',{method:'POST',body:JSON.stringify({username:$('newName').value,password:$('newPass').value,role:$('newRole').value})});$('newUser').reset();await loadUsersAndOrders()}catch(x){alert(x.message)}};
+boot();
+
+let lastOrder=null;
+function loadImg(src){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src})}
+function wrapText(ctx,t,maxW){const w=String(t).split(' ');const lines=[];let cur='';for(const x of w){const tt=cur?cur+' '+x:x;if(ctx.measureText(tt).width>maxW&&cur){lines.push(cur);cur=x}else cur=tt}if(cur)lines.push(cur);return lines}
+let storeInfo={phone:'',card:''};
+async function loadStoreInfo(){try{storeInfo=await api('/store-info')}catch(e){}return storeInfo}
+async function loadStoreForm(){const s=await loadStoreInfo();$('storePhone').value=s.phone||'';$('storeCard').value=s.card||''}
+$('storeForm').onsubmit=async e=>{e.preventDefault();const m=$('storeMsg');m.textContent='';try{storeInfo=await api('/store-info',{method:'PUT',body:JSON.stringify({phone:$('storePhone').value,card:$('storeCard').value})});m.textContent='ذخیره شد.'}catch(err){m.textContent=err.message}};
+async function receiptBlob(o){
+ await loadStoreInfo();const rawCard=String(storeInfo.card||'').trim(),digitsCard=rawCard.replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[\s-]/g,''),cardNo=/^[0-9]{16}$/.test(digitsCard)?digitsCard.replace(/(\d{4})(?=\d)/g,'$1 '):rawCard,cardH=cardNo?130:0;
+ const W=1080,P=48,fam='Peyda,Tahoma,Arial,sans-serif';await document.fonts.load('28px Peyda').catch(()=>0);const logo=await loadImg('/static/assets/sahelstore-app.png').catch(()=>null);
+ const c=document.createElement('canvas'),ctx=c.getContext('2d');c.width=W;
+ const rows=o.games.map(g=>({n:g.name,c:g.category,p:num(g.price)+' تومان'})).concat((o.extras||[]).filter(e=>e.kind==='item').map(e=>({n:e.name,c:'قطعه / خدمات',p:num(e.price)+' تومان'})));const accs=(o.extras||[]).filter(e=>e.kind==='acc').map(e=>e.name);
+ ctx.font='bold 30px '+fam;const nameW=440;let rowH=rows.map(r=>Math.max(1,wrapText(ctx,r.n,nameW).length)*40+26);
+ ctx.font='bold 26px '+fam;const accLines=accs.length?wrapText(ctx,'همراه دستگاه: '+accs.join('، '),W-2*P-40):[];const accH=accs.length?accLines.length*38+40:0;ctx.font='bold 30px '+fam;const H=accH+cardH+P+400+200+70+rowH.reduce((a,b)=>a+b,0)+130+150+P;c.height=H;
+ ctx.direction='rtl';ctx.textBaseline='middle';
+ let g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0a1230');g.addColorStop(.5,'#0b0a24');g.addColorStop(1,'#1a0a3a');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ if(logo){ctx.save();ctx.globalAlpha=.10;ctx.drawImage(logo,W/2-420,H/2-420,840,840);ctx.restore()}
+ const bg=ctx.createLinearGradient(0,0,W,0);bg.addColorStop(0,'#a855f7');bg.addColorStop(1,'#22d3ee');
+ ctx.strokeStyle=bg;ctx.lineWidth=5;ctx.strokeRect(20,20,W-40,H-40);
+ let y=P+10;
+ if(logo){ctx.save();ctx.beginPath();ctx.roundRect(W/2-95,y,190,190,26);ctx.clip();ctx.drawImage(logo,W/2-95,y,190,190);ctx.restore()}
+ ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 54px '+fam;ctx.fillText('فاکتور بازی‌ها',W/2,y+235);
+ ctx.font='bold 30px '+fam;ctx.fillStyle='#7fd8ff';ctx.fillText('موبایل ساحل',W/2,y+295);ctx.font='26px '+fam;ctx.fillStyle='#c9b8ff';ctx.fillText('رسید سفارش مشتری',W/2,y+340);
+ y+=400;
+ const info=[['شماره فاکتور',String(Number(o.number))],['تاریخ ثبت',jalali(o.date)],['نام مشتری',o.name||'—'],['تلفن فروشگاه','\u202A'+(storeInfo.phone||'—')+'\u202C']];
+ const bw=(W-2*P-20)/2;
+ info.forEach((it,i)=>{const col=i%2,row=Math.floor(i/2);const x=W-P-bw-col*(bw+20),yy=y+row*90;
+  ctx.fillStyle='rgba(255,255,255,.08)';ctx.beginPath();ctx.roundRect(x,yy,bw,76,14);ctx.fill();ctx.strokeStyle='rgba(160,140,255,.5)';ctx.lineWidth=2;ctx.stroke();
+  ctx.textAlign='center';ctx.fillStyle='#9fb4de';ctx.font='22px '+fam;ctx.fillText(it[0],x+bw/2,yy+22);
+  if(i===0){const gg=ctx.createLinearGradient(x+bw/2-70,0,x+bw/2+70,0);gg.addColorStop(0,'#22d3ee');gg.addColorStop(1,'#d946ef');ctx.fillStyle=gg;ctx.font='bold 34px '+fam}else{ctx.fillStyle='#fff';ctx.font='bold 28px '+fam}ctx.fillText(i===0?'\u202A'+num(Number(o.number))+'\u202C':String(it[1]).slice(0,30),x+bw/2,yy+54)});
+ y+=200;
+ const cx={idx:W-P-45,name:W-P-330,cat:P+400,price:P+110};
+ const hg=ctx.createLinearGradient(P,0,W-P,0);hg.addColorStop(0,'#6d28d9');hg.addColorStop(1,'#0891b2');ctx.fillStyle=hg;ctx.beginPath();ctx.roundRect(P,y,W-2*P,60,12);ctx.fill();ctx.fillStyle='#fff';ctx.font='bold 26px '+fam;
+ ctx.textAlign='center';ctx.fillText('ردیف',cx.idx,y+30);ctx.fillText('نام بازی',cx.name,y+30);ctx.fillText('دسته',cx.cat,y+30);ctx.fillText('قیمت',cx.price,y+30);
+ y+=60;
+ rows.forEach((r,i)=>{const h=rowH[i];ctx.font='28px '+fam;ctx.fillStyle='#f1f5ff';ctx.textAlign='center';ctx.fillText(num(i+1),cx.idx,y+h/2);
+  const ls=wrapText(ctx,r.n,nameW);ls.forEach((l,k)=>ctx.fillText(l,cx.name,y+h/2-(ls.length-1)*20+k*40));
+  ctx.fillStyle='#b9c6e6';ctx.fillText(r.c,cx.cat,y+h/2);ctx.fillStyle='#ffe16b';ctx.fillText(r.p,cx.price,y+h/2);
+  ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(P,y+h);ctx.lineTo(W-P,y+h);ctx.stroke();y+=h});
+ if(accs.length){ctx.textAlign='center';ctx.fillStyle='#ffe16b';ctx.font='bold 26px '+fam;accLines.forEach((l,k)=>ctx.fillText(l,W/2,y+28+k*38));y+=accH}y+=30;ctx.fillStyle='rgba(255,214,0,.10)';ctx.beginPath();ctx.roundRect(P,y,W-2*P,100,16);ctx.fill();ctx.strokeStyle='#ffd400';ctx.lineWidth=3;ctx.stroke();
+ ctx.fillStyle='#fff';ctx.font='26px '+fam;ctx.textAlign='center';ctx.fillText('مبلغ نهایی قابل پرداخت',W/2,y+28);
+ ctx.fillStyle='#ffe16b';ctx.font='bold 40px '+fam;ctx.fillText(num(o.total)+' تومان',W/2,y+68);
+ if(cardNo){y+=100+30;ctx.fillStyle='rgba(34,211,238,.10)';ctx.beginPath();ctx.roundRect(P,y,W-2*P,100,16);ctx.fill();ctx.strokeStyle='#22d3ee';ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='#fff';ctx.font='26px '+fam;ctx.textAlign='center';ctx.fillText('شماره کارت جهت پرداخت',W/2,y+28);ctx.fillStyle='#7fd8ff';ctx.font='bold 38px '+fam;ctx.fillText('\u202A'+cardNo+'\u202C',W/2,y+68)}
+ y+=100+60;ctx.textAlign='center';ctx.fillStyle='#7fd8ff';ctx.font='bold 28px '+fam;ctx.fillText('از اینکه فروشگاه ما را انتخاب کردید، سپاسگزاریم!',W/2,y);
+ ctx.font='24px '+fam;ctx.fillStyle='#b9c6e6';ctx.fillText('امیدواریم از تجربه بازی‌تان لذت ببرید؛ منتظر دیدار دوباره شما هستیم.',W/2,y+44);
+ return new Promise(r=>c.toBlob(r,'image/png'))}
+function blobToDataURL(b){return new Promise((res,rej)=>{const f=new FileReader();f.onload=()=>res(f.result);f.onerror=rej;f.readAsDataURL(b)})}
+async function deliverBlob(b,name){
+ // داخل اپ اندروید: مستقیم در گالری ذخیره می‌شود
+ if(window.AndroidBridge&&AndroidBridge.save){AndroidBridge.save(await blobToDataURL(b),b.type||'image/png');return}
+ const url=URL.createObjectURL(b);
+ // مرورگر موبایل: دانلود blob روی HTTP قابل اعتماد نیست؛ عکس را تمام‌صفحه نشان بده تا نگه‌داشتن/ذخیره کار کند
+ if(window.matchMedia&&matchMedia('(pointer:coarse)').matches){
+  const o=document.createElement('div');o.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px;overflow:auto';
+  const im=new Image();im.src=url;im.alt=name;im.style.cssText='max-width:100%;height:auto;border-radius:10px;background:#fff';
+  const t=document.createElement('div');t.textContent='عکس را نگه دارید و «ذخیره تصویر» را بزنید';t.style.cssText='color:#fff;font-size:14px;text-align:center';
+  const row=document.createElement('div');row.style.cssText='display:flex;gap:8px';
+  const dl=document.createElement('a');dl.href=url;dl.download=name;dl.textContent='⬇️ دانلود';dl.style.cssText='padding:10px 16px;background:#22d3ee;color:#04141a;border-radius:10px;text-decoration:none;font-weight:700';
+  const cl=document.createElement('button');cl.type='button';cl.textContent='✕ بستن';cl.onclick=()=>{o.remove();URL.revokeObjectURL(url)};
+  row.append(dl,cl);o.append(t,im,row);document.body.appendChild(o);return}
+ const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000)}
+async function saveReceipt(o,auto){try{const b=await receiptBlob(o);const name='receipt-'+o.number+'.png';
+ if(!auto&&navigator.canShare&&navigator.canShare({files:[new File([b],name,{type:'image/png'})]})){try{await navigator.share({files:[new File([b],name,{type:'image/png'})]});return}catch(e){if(e.name==='AbortError')return}}
+ await deliverBlob(b,name)}catch(e){if(!auto)alert('ساخت عکس رسید ناموفق بود.')}}
+$('saveImg').onclick=()=>{if(lastOrder)saveReceipt(lastOrder,false)};
+
+let editingId=null;
+async function ensureAllGames(){for(const c of categories){if([...allGameCache.values()].some(g=>g.category_id===c.id))continue;const d=await api('/games?category='+encodeURIComponent(c.id));d.games.forEach(g=>allGameCache.set(g.id,g))}}
+async function startEdit(id){viewSettings(false);try{const o=await api('/orders/'+id);await ensureAllGames();editingId=id;extras=(o.extras||[]).map(e=>({kind:e.kind,name:e.name,price:e.price}));renderExtras();selected=new Set(o.games.map(g=>g.game_id).filter(Boolean));$('custName').value=o.name||'';$('custPhone').value=o.phone||'';$('formTitle').textContent='ویرایش فاکتور شماره '+o.number;$('submitOrder').textContent='ثبت ویرایش و نمایش فاکتور';$('cancelEdit').classList.remove('hide');$('invoice').classList.add('hide');if(o.games.some(g=>!g.game_id))alert('بعضی بازی‌های این فاکتور دیگر در فهرست وجود ندارند و در انتخاب نیامدند.');renderGames();$('customerForm').scrollIntoView({behavior:'smooth'})}catch(e){alert(e.message)}}
+function endEdit(){editingId=null;syncSel();$('formTitle').textContent='اطلاعات سفارش';$('submitOrder').textContent='تأیید سفارش و نمایش فاکتور';$('cancelEdit').classList.add('hide')}
+$('cancelEdit').onclick=()=>{endEdit();selected.clear();extras=[];renderExtras();renderTotal();$('custName').value='';$('custPhone').value='';renderGames()};
+
+async function loadPanelQR(){try{const r=await fetch('/api/panel-qr.svg',{credentials:'same-origin'});if(!r.ok)return;const b=await r.blob();$('panelQR').src=URL.createObjectURL(b);const u=r.headers.get('X-Panel-Url')||location.origin+'/';$('panelUrl').textContent=u;$('qrWarn').classList.add('hide')}catch(e){}}
+$('qrDownload').onclick=async()=>{try{await document.fonts.load('28px Peyda').catch(()=>0);const fam='Peyda,Tahoma,Arial,sans-serif',W=900,H=1200,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.direction='rtl';x.textBaseline='middle';x.textAlign='center';
+ const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0a1230');g.addColorStop(1,'#26104f');x.fillStyle=g;x.fillRect(0,0,W,H);
+ const bg=x.createLinearGradient(0,0,W,0);bg.addColorStop(0,'#a855f7');bg.addColorStop(1,'#22d3ee');x.strokeStyle=bg;x.lineWidth=8;x.strokeRect(24,24,W-48,H-48);
+ const logo=await loadImg('/static/assets/sahelstore-app.png');x.save();x.beginPath();x.roundRect(W/2-120,70,240,240,34);x.clip();x.drawImage(logo,W/2-120,70,240,240);x.restore();
+ x.fillStyle='#7fd8ff';x.font='bold 64px '+fam;x.fillText('موبایل ساحل',W/2,370);x.fillStyle='#c9b8ff';x.font='bold 40px '+fam;x.fillText('اسکن کنید و وارد پنل شوید',W/2,440);
+ x.fillStyle='#fff';x.beginPath();x.roundRect(W/2-250,500,500,500,30);x.fill();const q=await loadImg($('panelQR').src);x.drawImage(q,W/2-225,525,450,450);
+ x.direction='ltr';x.fillStyle='#ffe16b';x.font='bold 34px '+fam;x.fillText($('panelUrl').textContent,W/2,1070);x.direction='rtl';x.fillStyle='#9fb4de';x.font='28px '+fam;x.fillText('دوربین گوشی را روی کد بگیرید',W/2,1130);
+ const b=await new Promise(r=>c.toBlob(r,'image/png'));await deliverBlob(b,'sahelstore-panel-qr.png')}catch(e){alert('ساخت تصویر QR ناموفق بود.')}};
+
+fetch('/api/panel-qr.svg').then(r=>r.ok?r.blob():null).then(b=>{if(b)$('gateQRImg').src=URL.createObjectURL(b)}).catch(()=>{});
+</script></body></html>
