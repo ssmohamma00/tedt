@@ -21,13 +21,28 @@ import http.server
 # temporary folder at sys._MEIPASS for the lifetime of the process.
 if getattr(sys, "frozen", False):
     BASE = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(sys.executable)))
-    # dashboard.sqlite3 / network.json must live next to the real exe,
-    # not inside that temporary extraction folder, so they persist
-    # across runs instead of being wiped out every time the app closes.
-    PERSIST_DIR = os.path.dirname(os.path.abspath(sys.executable))
 else:
     BASE = os.path.dirname(os.path.abspath(__file__))
+
+# Writable state (dashboard.sqlite3, network.json) must NOT live next to
+# the exe: when installed into Program Files (the default install
+# location), Windows blocks a normal, non-admin process from creating
+# new files there, so sqlite3 fails with "unable to open database file"
+# and the whole app never starts. Use the per-user AppData folder
+# instead -- always writable without elevation, and still persists
+# across runs on this same Windows account.
+if os.name == "nt":
+    appdata = os.environ.get("LOCALAPPDATA") or os.environ.get("APPDATA")
+else:
+    appdata = None
+
+if appdata:
+    PERSIST_DIR = os.path.join(appdata, "GameForSale")
+elif getattr(sys, "frozen", False):
+    PERSIST_DIR = os.path.dirname(os.path.abspath(sys.executable))
+else:
     PERSIST_DIR = BASE
+os.makedirs(PERSIST_DIR, exist_ok=True)
 
 sys.path.insert(0, BASE)
 os.chdir(PERSIST_DIR)
@@ -49,6 +64,7 @@ server.BASE = BASE
 server.DB = os.path.join(PERSIST_DIR, "dashboard.sqlite3")
 server.NET_FILE = os.path.join(PERSIST_DIR, "network.json")
 
+print(f"[debug] writable data folder (server.DB's dir): {PERSIST_DIR}", flush=True)
 print(f"[debug] assets folder (server.BASE): {server.BASE}", flush=True)
 print(f"[debug] static/index.html exists: {os.path.isfile(os.path.join(server.BASE, 'static', 'index.html'))}", flush=True)
 try:
@@ -73,20 +89,37 @@ def wait_until_ready(host, port, timeout=30):
     return False
 
 
+server_error = []
+
+
 def run_server():
-    server.init()
-    print(f"Game For Sale listening on http://{server.HOST}:{server.PORT}", flush=True)
+    # A crash in this background thread does NOT propagate to the main
+    # thread or raise in main() -- Python just prints it and the thread
+    # quietly dies, leaving wait_until_ready() to time out with no clue
+    # why. Catch it explicitly and hand the error back to main().
     try:
-        print("Panel address (QR):", server.panel_url(), flush=True)
-    except Exception:
-        pass
-    http.server.ThreadingHTTPServer((server.HOST, server.PORT), server.H).serve_forever()
+        server.init()
+        print(f"Game For Sale listening on http://{server.HOST}:{server.PORT}", flush=True)
+        try:
+            print("Panel address (QR):", server.panel_url(), flush=True)
+        except Exception:
+            pass
+        http.server.ThreadingHTTPServer((server.HOST, server.PORT), server.H).serve_forever()
+    except Exception as exc:
+        import traceback
+
+        traceback.print_exc()
+        server_error.append(exc)
 
 
 def main():
     port = server.PORT
     threading.Thread(target=run_server, daemon=True).start()
-    wait_until_ready(server.HOST, port)
+    ready = wait_until_ready(server.HOST, port)
+    if not ready:
+        if server_error:
+            raise RuntimeError(f"The local server failed to start: {server_error[0]!r}") from server_error[0]
+        raise RuntimeError("The local server did not start within 30 seconds.")
     url = f"http://127.0.0.1:{port}"
 
     try:
