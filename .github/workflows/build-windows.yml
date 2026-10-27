@@ -18,23 +18,27 @@ jobs:
       - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install --upgrade pyinstaller pywebview pythonnet
+          python -m pip install --upgrade pyinstaller pywebview pythonnet pystray Pillow
 
       - name: Build GameForSale.exe with PyInstaller
         run: >
-          python -m PyInstaller --noconfirm --onefile --console
+          python -m PyInstaller --noconfirm --onefile --windowed
           --name GameForSale --icon app_icon.ico --paths vendor
           --add-data "static;static" --add-data "vendor;vendor" --add-data "catalog.json;."
+          --add-data "app_icon.ico;."
           --hidden-import xml.etree.ElementTree --hidden-import xml.etree.cElementTree
           --hidden-import xml.parsers.expat --hidden-import qrcode --hidden-import qrcode.image.svg
           --hidden-import webview.platforms.edgechromium --hidden-import webview.platforms.winforms
-          --hidden-import webview.platforms.mshtml --collect-all clr_loader --collect-all pythonnet
+          --hidden-import webview.platforms.mshtml --hidden-import pystray._win32
+          --hidden-import PIL._tkinter_finder --collect-all clr_loader --collect-all pythonnet
           launcher.py
 
       - name: Smoke-test the built exe (catches "not found" / packaging bugs)
         shell: pwsh
         run: |
-          $proc = Start-Process -FilePath "dist\GameForSale.exe" -PassThru -RedirectStandardOutput "exe_stdout.log" -RedirectStandardError "exe_stderr.log"
+          $logPath = Join-Path $env:LOCALAPPDATA "GameForSale\launcher.log"
+          if (Test-Path $logPath) { Remove-Item $logPath -Force }
+          $proc = Start-Process -FilePath "dist\GameForSale.exe" -PassThru
           $ok = $false
           for ($i = 0; $i -lt 40; $i++) {
             Start-Sleep -Seconds 1
@@ -52,12 +56,11 @@ jobs:
               Write-Host "Not ready yet (attempt $i): $($_.Exception.Message)"
             }
           }
-          Write-Host "---- exe stdout/stderr (debug prints from launcher.py) ----"
-          if (Test-Path "exe_stdout.log") { Get-Content "exe_stdout.log" }
-          if (Test-Path "exe_stderr.log") { Get-Content "exe_stderr.log" }
+          Write-Host "---- launcher.log (this build has no console; everything is logged here instead) ----"
+          if (Test-Path $logPath) { Get-Content $logPath } else { Write-Host "(no log file was created at $logPath)" }
           Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
           if (-not $ok) {
-            Write-Error "GameForSale.exe did not serve the real app page -- see logs above."
+            Write-Error "GameForSale.exe did not serve the real app page -- see the log above."
             exit 1
           }
 

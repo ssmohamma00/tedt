@@ -67,10 +67,12 @@ echo.
 rem --- 2) Install PyInstaller + the native-window toolkit ----------------
 rem   pywebview + pythonnet give the app a real chrome-less window
 rem   (backed by the Edge WebView2 runtime, already built into Windows
-rem   10/11) instead of opening a browser tab.
+rem   10/11) instead of opening a browser tab. pystray + Pillow give it
+rem   a system tray icon since there's no console window to interact
+rem   with any more.
 echo Installing/upgrading PyInstaller and pywebview...
 %PY% -m pip install --upgrade pip >nul
-%PY% -m pip install --upgrade pyinstaller pywebview pythonnet
+%PY% -m pip install --upgrade pyinstaller pywebview pythonnet pystray Pillow
 if errorlevel 1 (
     echo [ERROR] Failed to install required Python packages.
     pause
@@ -79,6 +81,9 @@ if errorlevel 1 (
 echo.
 
 rem --- 3) Build the standalone exe with PyInstaller ---------------------
+rem   --windowed: no console window at all; the app only shows its own
+rem   window + a tray icon, and runs in the background otherwise
+rem   (visible in Task Manager as GameForSale.exe).
 rem   --paths vendor lets PyInstaller statically see the vendored
 rem   "qrcode" package (it's imported dynamically via sys.path, which
 rem   PyInstaller can't follow on its own) so it correctly pulls in the
@@ -86,8 +91,9 @@ rem   stdlib "xml" modules qrcode's SVG renderer needs. The explicit
 rem   --hidden-import flags are a belt-and-braces backup for the same
 rem   reason -- without either, the exe builds fine but then crashes at
 rem   first run with "ModuleNotFoundError: No module named 'xml'".
+rem   --add-data for app_icon.ico bundles it for the tray icon to load.
 echo Building GameForSale.exe ...
-%PY% -m PyInstaller --noconfirm --onefile --console --name GameForSale --icon app_icon.ico --paths vendor --add-data "static;static" --add-data "vendor;vendor" --add-data "catalog.json;." --hidden-import xml.etree.ElementTree --hidden-import xml.etree.cElementTree --hidden-import xml.parsers.expat --hidden-import qrcode --hidden-import qrcode.image.svg --hidden-import webview.platforms.edgechromium --hidden-import webview.platforms.winforms --hidden-import webview.platforms.mshtml --collect-all clr_loader --collect-all pythonnet launcher.py
+%PY% -m PyInstaller --noconfirm --onefile --windowed --name GameForSale --icon app_icon.ico --paths vendor --add-data "static;static" --add-data "vendor;vendor" --add-data "catalog.json;." --add-data "app_icon.ico;." --hidden-import xml.etree.ElementTree --hidden-import xml.etree.cElementTree --hidden-import xml.parsers.expat --hidden-import qrcode --hidden-import qrcode.image.svg --hidden-import webview.platforms.edgechromium --hidden-import webview.platforms.winforms --hidden-import webview.platforms.mshtml --hidden-import pystray._win32 --hidden-import PIL._tkinter_finder --collect-all clr_loader --collect-all pythonnet launcher.py
 if errorlevel 1 (
     echo [ERROR] PyInstaller build failed. See the output above.
     pause
