@@ -125,8 +125,15 @@ def main():
     try:
         import webview  # pywebview: a real, chrome-less app window
 
+        # Keep WebView2's own profile/cache in our guaranteed-writable
+        # AppData folder too (not wherever pywebview defaults to, which
+        # can land under Program Files when installed there and either
+        # fail to write or silently cache a broken page across runs).
+        webview_data_dir = os.path.join(PERSIST_DIR, "webview_data")
+        os.makedirs(webview_data_dir, exist_ok=True)
+
         window = webview.create_window("Game For Sale", url, width=1360, height=860, min_size=(900, 600))
-        webview.start()
+        webview.start(storage_path=webview_data_dir, private_mode=False)
         # webview.start() blocks until the window is closed; once the
         # user closes it, exit the whole process (the server thread is
         # a daemon thread, so it won't keep the app alive on its own).

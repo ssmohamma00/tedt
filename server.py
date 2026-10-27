@@ -248,7 +248,7 @@ class H(http.server.BaseHTTPRequestHandler):
    except Exception as e:
     import traceback;traceback.print_exc()
     b=('not found: '+repr(idx)+' -- '+repr(e)).encode()
-   self.send(200,None,'text/html; charset=utf-8');self.wfile.write(b);return
+   self.send(200,None,'text/html; charset=utf-8',headers={'Cache-Control':'no-store, no-cache, must-revalidate','Pragma':'no-cache'});self.wfile.write(b);return
   if p.startswith('/static/assets/') or p.startswith('/static/fonts/'):
    sub='fonts' if p.startswith('/static/fonts/') else 'assets';name=os.path.basename(p);ext=os.path.splitext(name)[1].lower();types={'.ttf':'font/ttf','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.webp':'image/webp'}
    fp=os.path.join(BASE,'static',sub,name)
